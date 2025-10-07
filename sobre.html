@@ -9,18 +9,20 @@
 <body>
 
     <header class="header">
-        <h1 class="logo">Caminho Lilás</h1>
-        <nav>
-    <ul class="nav">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="violencia.html">Violência Doméstica</a></li>
-        <li><a href="apoio.html">Locais de Apoio</a></li>
-        <li><a href="emergencia.html">Contatos de Emergência</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Estratégias</a></li>
-    </ul>
-</nav>
-    </header>
+    <h1 class="logo">Caminho Lilás</h1>
+    <nav>
+        <ul class="nav">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="violencia.html">Violência Doméstica</a></li>
+            <li><a href="apoio.html">Locais de Apoio</a></li>
+            <li><a href="emergencia.html" >Contatos de Emergência</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="seguranca.html">Estratégias</a></li>
+            <li><a href="sobre.html"class="active">Sobre nós</a></li>
+        </ul>
+    </nav>
+</header>
+
 
     <main class="content" style="max-width: 800px; margin: 3rem auto; padding: 0 1rem;">
         <h2>Sobre o Caminho Lilás</h2>
@@ -30,6 +32,12 @@
         <p>
             Infelizmente, a violência contra a mulher continua a ser uma realidade alarmante no Brasil. Muitas vítimas, em razão do medo ou da falta de informação, não sabem como proceder ou têm receio de buscar auxílio. Este projeto foi desenvolvido para ser uma ferramenta de fácil acesso e com conteúdo útil, funcionando como um primeiro e seguro passo na busca por apoio e justiça.
         </p>
+            O botão de emergência SOS do Caminho Lilás foi desenvolvido para proteger mulheres que acessam o site em situações de risco. Ao ser clicado, ele redireciona imediatamente para um site de receitas de bolo, simulando uma página comum e inofensiva.
+
+Essa função serve para disfarçar o acesso e garantir a segurança da usuária, caso alguém se aproxime enquanto ela busca informações ou ajuda. É uma forma simples e eficaz de evitar suspeitas e permitir que a mulher tenha acesso a conteúdo de apoio sem se expor ao perigo.
+
+O Caminho Lilás acredita que toda mulher merece segurança até mesmo no ambiente digital. Por isso, cada detalhe foi pensado para oferecer acolhimento, privacidade e proteção a quem mais precisa.
+        </p>
     </main>
 
     <footer class="footer">
@@ -38,3 +46,25 @@
 
 </body>
 </html>
+
+<!-- Botão de Emergência fixo -->
+<button onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'" 
+    style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background: red;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 999;
+        font-size: 14px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        transition: transform 0.2s;
+    ">
+    SOS
+</button>

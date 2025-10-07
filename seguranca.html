@@ -1,41 +1,252 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TÍTULO DA PÁGINA • Caminho Lilás</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caminho Lilás | Estratégias de Segurança</title>
+  <style>
+    /* ===== Fonte e base ===== */
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #fdf6fa;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* ===== Cabeçalho ===== */
+    .header {
+      background: linear-gradient(90deg, #a75ca8, #b66cb8);
+      padding: 1rem 2rem;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-family: 'Georgia', serif;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 300;
+      transition: opacity 0.3s;
+    }
+
+    .nav a:hover {
+      opacity: 0.8;
+    }
+
+    .nav a.active {
+      border-bottom: 2px solid #fff;
+    }
+
+    /* ===== Título e subtítulo ===== */
+    .page-title-strategy {
+      text-align: center;
+      margin: 3rem auto 2rem;
+      color: #7a3d8a;
+      font-family: 'Georgia', serif;
+      font-size: 2.8rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .page-subtitle-strategy {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    /* ===== Cards de Estratégia ===== */
+    .strategy-cards {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 3rem auto;
+      max-width: 1100px;
+      padding: 0 1rem;
+    }
+
+    .strategy-box {
+      flex: 1;
+      min-width: 250px;
+      max-width: 320px;
+      background-color: #fff;
+      border: 2px solid #a75ca8;
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: left;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .strategy-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .strategy-box h3 {
+      color: #ba87a1;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      font-family: 'Georgia', serif;
+    }
+
+    .strategy-box p {
+      font-size: 1.05em;
+      color: #666;
+      margin-bottom: 1rem;
+    }
+
+    .strategy-box ul {
+      list-style: none;
+      padding-left: 0;
+      margin: 0;
+    }
+
+    .strategy-box li {
+      background-color: #fdf6fa;
+      border-left: 4px solid #a75ca8;
+      border-radius: 6px;
+      padding: 0.6rem 1rem;
+      margin-bottom: 0.6rem;
+      font-size: 0.95em;
+      color: #444;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    /* ===== Rodapé ===== */
+    .footer {
+      text-align: center;
+      padding: 1rem;
+      background: linear-gradient(90deg, #b66cb8, #a75ca8);
+      color: white;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    /* ===== Responsividade ===== */
+    @media (max-width: 768px) {
+      .strategy-cards {
+        flex-direction: column;
+        align-items: center;
+      }
+      .strategy-box {
+        width: 100%;
+        max-width: 340px;
+      }
+      .page-title-strategy {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <header class="header">
-    <a class="brand" href="index.html">
-      <span class="brand-mark" aria-hidden="true"></span>
-      <span>Caminho Lilás</span>
-    </a>
 
-    <nav aria-label="Principal">
+  <!-- Cabeçalho -->
+  <header class="header">
+    <h1 class="logo">Caminho Lilás</h1>
+    <nav>
       <ul class="nav">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="violencia.html">Violência Doméstica</a></li>
-        <li><a href="apoio.html">Locais de Apoio</a></li>
-        <li><a href="emergencia.html">Contatos de Emergência</a></li>
-        <li><a href="faq.html">FAQ</a></li>
-        <li><a href="seguranca.html">Estratégias</a></li>
-      </ul>
+  <li><a href="index.html">Início</a></li>
+  <li><a href="violencia.html">Violência Doméstica</a></li>
+  <li><a href="apoio.html">Locais de Apoio</a></li>
+  <li><a href="emergencia.html">Contatos de Emergência</a></li>
+  <li><a href="faq.html">FAQ</a></li>
+  <li><a href="seguranca.html" class="active">Estratégias</a></li>
+</ul>
     </nav>
   </header>
 
-  <main class="container">
-    <section class="placeholder">
-      <h1>Estratégias de Segurança</h1>
-      <p>Conteúdo em construção.</p>
+  <!-- Conteúdo -->
+  <main class="content">
+    <h1 class="page-title-strategy">Estratégias de Segurança</h1>
+    <p class="page-subtitle-strategy">Medidas práticas para proteger você em situações de risco. Confira dicas essenciais que podem fortalecer sua segurança no dia a dia.</p>
+
+    <section class="strategy-cards">
+      <div class="strategy-box">
+        <h3>Internet Segura</h3>
+        <p>Proteja sua presença digital:</p>
+        <ul>
+          <li>Use senhas fortes e diferentes.</li>
+          <li>Ative autenticação em dois fatores.</li>
+          <li>Evite compartilhar localização em tempo real.</li>
+        </ul>
+      </div>
+
+      <div class="strategy-box">
+        <h3>Planejamento Pessoal</h3>
+        <p>Organize-se e esteja preparada:</p>
+        <ul>
+          <li>Guarde documentos importantes em local seguro.</li>
+          <li>Anote contatos de emergência fora do celular.</li>
+          <li>Crie rotinas que aumentem sua autonomia.</li>
+        </ul>
+      </div>
+
+      <div class="strategy-box">
+        <h3>Rede de Apoio</h3>
+        <p>Conte com pessoas de confiança:</p>
+        <ul>
+          <li>Compartilhe sinais de alerta com alguém próximo.</li>
+          <li>Combine uma palavra-código para pedir ajuda.</li>
+          <li>Busque apoio em grupos e serviços especializados.</li>
+        </ul>
+      </div>
+
+      <div class="strategy-box">
+        <h3>Plano de Saída</h3>
+        <p>Tenha alternativas seguras:</p>
+        <ul>
+          <li>Identifique locais seguros próximos.</li>
+          <li>Mantenha uma mochila pronta com itens essenciais.</li>
+          <li>Planeje rotas de fuga rápidas.</li>
+        </ul>
+      </div>
     </section>
   </main>
 
+  <!-- Rodapé -->
   <footer class="footer">
-    <small>© 2025 Caminho Lilás — Projeto Integrador ADS</small>
+    <p>&copy; 2025 Caminho Lilás. Todos os direitos reservados.</p>
   </footer>
 
-  <script src="main.js"></script>
-</body>
-</html>
+  </body>
+  </html>
+
+<!-- Botão de Emergência fixo -->
+<button onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'" 
+    style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background: red;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 999;
+        font-size: 14px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        transition: transform 0.2s;
+    ">
+    SOS
+</button>

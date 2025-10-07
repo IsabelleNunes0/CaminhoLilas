@@ -117,7 +117,7 @@
         }
 
         .location-item h3 {
-            color: #d46aa0;
+            color: #d26ac2;
             font-size: 1.5rem;
             margin-top: 0;
             margin-bottom: 1rem;
@@ -165,19 +165,21 @@
 </head>
 <body>
 
-    <header class="header">
-        <h1 class="logo">Caminho Lilás</h1>
-        <nav>
+    <!-- Cabeçalho -->
+<header class="header">
+  <h1 class="logo">Caminho Lilás</h1>
+  <nav>
     <ul class="nav">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="violencia.html">Violência Doméstica</a></li>
-        <li><a href="apoio.html" class="active">Locais de Apoio</a></li>
-        <li><a href="emergencia.html">Contatos de Emergência</a></li>
-        <li><a href="#">FAQ</a></li>
-        <li><a href="#">Estratégias</a></li>
+      <li><a href="index.html" >Início</a></li>
+      <li><a href="violencia.html">Violência Doméstica</a></li>
+      <a href="apoio.html" class="active">Locais de Apoio</a>
+      <li><a href="emergencia.html">Contatos de Emergência</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="seguranca.html">Estratégias</a></li>
     </ul>
-</nav>
-    </header>
+  </nav>
+</header>
+
 
     <main class="content">
         <h1 class="page-title-emergency">Locais e Instituições de Apoio</h1>
@@ -218,7 +220,7 @@
                     <p>Organizações não governamentais que oferecem suporte complementar e acolhimento.</p>
                     <address>
                         <a href="https://cladem.org/" target="_blank" class="btn-link">CLADEM Brasil (Comitê da América Latina e Caribe)</a><br>
-                        <a href="https://www.gov.br/mulheres/pt-br/acesso-a-informacao/acoes-e-programas/casa-da-mulher-brasileira" target="_blank" class="btn-link">Outras instituições no DF</a>
+                        <a href="https://www.mulher.df.gov.br/centro-especializado-de-atendimento-a-mulher-ceam" target="_blank" class="btn-link">Outras instituições no DF</a>
                     </address>
                 </div>
             </div>
@@ -229,5 +231,27 @@
         <p>&copy; 2025 Caminho Lilás. Todos os direitos reservados.</p>
     </footer>
 
-</body>
-</html>
+    </body>
+    </html>
+    
+    <!-- Botão de Emergência fixo -->
+<button onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'" 
+    style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background: red;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 999;
+        font-size: 14px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        transition: transform 0.2s;
+    ">
+    SOS
+</button>

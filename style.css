@@ -15,6 +15,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -23,6 +24,7 @@ body {
   font-weight: bold;
 }
 
+/* Navegação padrão */
 .nav {
   list-style: none;
   display: flex;
@@ -32,18 +34,37 @@ body {
 }
 
 .nav a {
-  color: white;
+  color: #fff;
   text-decoration: none;
-  font-weight: 300;
-  transition: opacity 0.3s;
+  padding: 0.5rem 1rem;
+  display: inline-block;
+}
+
+/* Página ativa e hover */
+.nav a.active {
+  font-weight: bold;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 5px;
 }
 
 .nav a:hover {
-  opacity: 0.8;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 5px;
 }
 
-.nav a.active {
-  border-bottom: 2px solid #fff;
+/* ===== Menu Hambúrguer ===== */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle div {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
 }
 
 /* ===== Hero ===== */
@@ -70,6 +91,7 @@ body {
   padding: 2rem;
   border-radius: 15px;
   max-width: 600px;
+  width: 90%;
 }
 
 .hero-text h1 {
@@ -111,7 +133,6 @@ body {
   background-color: #5e2d68;
 }
 
-/* Sombra suave no hover dos botões */
 .btn:hover {
   box-shadow: 0 6px 16px rgba(0,0,0,0.18);
 }
@@ -154,6 +175,7 @@ body {
   margin: 3rem auto;
   max-width: 900px;
   padding: 0 1rem;
+  flex-wrap: wrap;
 }
 
 .card {
@@ -237,14 +259,45 @@ body {
 }
 
 /* ===== Responsividade ===== */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: #a75ca8;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-img {
+    height: 300px;
+  }
+
+  .hero-text {
+    padding: 1.2rem;
+    font-size: 0.95rem;
+  }
+
   .cards-container {
     flex-direction: column;
     align-items: center;
   }
 
   .card {
-    width: 100%;
+    width: 90%;
     max-width: 320px;
   }
 
@@ -258,15 +311,50 @@ body {
     width: 90%;
   }
 }
-/* Estilo para o link da página ativa no cabeçalho */
-.nav a.active {
-    font-weight: bold;
-    border-bottom: 2px solid #a75ca8;
-    padding-bottom: 5px;
+
+/* ===== Hero Segurança ===== */
+.hero-seguranca {
+  background: linear-gradient(to right, #a75ca8, #d46aa0);
+  color: white;
+  text-align: center;
+  padding: 3rem 1rem;
 }
 
-/* Estilo para quando passar o mouse */
-.nav a:hover {
-    border-bottom: 2px solid #a75ca8;
-    padding-bottom: 5px;
+.hero-seguranca h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  font-family: 'Georgia', serif;
+}
+
+.hero-seguranca p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ===== Cards Estratégias ===== */
+.cards-seguranca {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.cards-seguranca .card {
+  background: #f9e5f5;
+  border-left: 6px solid #a75ca8;
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.cards-seguranca .card:hover {
+  transform: scale(1.03);
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.15);
+}
+
+.cards-seguranca h2 {
+  margin-top: 0;
+  color: #7a3d8a;
+  font-family: 'Georgia', serif;
 }
