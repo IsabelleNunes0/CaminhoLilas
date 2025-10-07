@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -251,3 +252,210 @@
     ">
     SOS
 </button>
+=======
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caminho Lilás | Ajuda Imediata</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos específicos para esta página (pode ser movido para style.css) */
+        .page-title-emergency {
+            text-align: center;
+            margin: 3rem auto 2rem;
+            color: #7a3d8a;
+            font-family: 'Georgia', serif;
+            font-size: 2.8rem; /* Título maior */
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .page-subtitle-emergency {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-size: 1.1em;
+            color: #555;
+        }
+
+        .emergency-contacts {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin: 3rem auto;
+            max-width: 1000px;
+            padding: 0 1rem;
+        }
+
+        .contact-box {
+            flex: 1;
+            min-width: 280px;
+            max-width: 450px; /* Limita a largura para não ficar muito grande em telas largas */
+            background-color: #fff;
+            border: 2px solid #a75ca8; /* Borda destacada */
+            border-radius: 15px;
+            padding: 2.5rem; /* Mais padding */
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Sombra mais forte */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .contact-box:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-box h3 {
+            color: #d46aa0; /* Cor de destaque para o título */
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .contact-box p {
+            font-size: 1.1em;
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .contact-box .btn {
+            width: 100%; /* Botões ocupando toda a largura */
+            padding: 1rem 0; /* Aumenta o padding vertical */
+            font-size: 1.1em; /* Texto maior no botão */
+            margin: 0; /* Remove margem lateral */
+        }
+
+        .support-locations-section {
+            background-color: #f9e5f5; /* Fundo suave para a seção */
+            padding: 4rem 1rem; /* Mais padding na seção */
+            margin-top: 4rem;
+            text-align: center;
+        }
+
+        .support-locations-section h2 {
+            color: #7a3d8a;
+            font-family: 'Georgia', serif;
+            font-size: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .support-locations-section > p { /* Parágrafo logo abaixo do h2 */
+            max-width: 800px;
+            margin: 0 auto 3.5rem;
+            font-size: 1.1em;
+            color: #444;
+        }
+
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Layout responsivo em grade */
+            gap: 2rem; /* Espaçamento entre os itens da grade */
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .location-item {
+            background-color: #fff;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            text-align: left; /* Texto alinhado à esquerda dentro do item */
+            border-top: 5px solid #b66cb8; /* Detalhe na borda */
+            transition: transform 0.2s ease;
+        }
+
+        .location-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+
+        .location-item h3 {
+            color: #d46aa0;
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .location-item p {
+            font-size: 0.95em;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .location-item address {
+            font-style: normal; /* Remove itálico padrão */
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .location-item .btn-link {
+            text-align: right;
+            display: block;
+            margin-top: 1.5rem;
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 768px) {
+            .page-title-emergency {
+                font-size: 2.2rem;
+            }
+            .contact-box {
+                padding: 1.5rem;
+            }
+            .support-locations-section h2 {
+                font-size: 2rem;
+            }
+            .locations-grid {
+                grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+            }
+            .location-item {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1 class="logo">Caminho Lilás</h1>
+        <nav>
+    <ul class="nav">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="violencia.html">Violência Doméstica</a></li>
+        <li><a href="apoio.html">Locais de Apoio</a></li>
+        <li><a href="emergencia.html" class="active">Contatos de Emergência</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Estratégias</a></li>
+    </ul>
+</nav>
+    </header>
+
+    <main class="content">
+        <h1 class="page-title-emergency">Precisa de Ajuda Agora?</h1>
+        <p class="page-subtitle-emergency">Sua segurança é nossa prioridade. Entre em contato com os serviços de emergência e apoio imediatamente.</p>
+
+        <section class="emergency-contacts">
+            <div class="contact-box">
+                <h3>Emergência Imediata</h3>
+                <p>Em caso de perigo ou agressão em andamento, ligue para a polícia.</p>
+                <a href="tel:190" class="btn btn-primary">LIGUE 190 (Polícia Militar)</a>
+            </div>
+            <div class="contact-box">
+                <h3>Denúncias e Orientações</h3>
+                <p>Para registrar uma denúncia anônima ou obter informações.</p>
+                <a href="tel:180" class="btn btn-secondary">LIGUE 180 (Central de Atendimento à Mulher)</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Caminho Lilás. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
+>>>>>>> b631d469e078d267a8bd20462d02fffc9f6a4d36
