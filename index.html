@@ -89,13 +89,26 @@
   </footer>
 
   <!-- Botão de Emergência fixo -->
-  <button id="botaoEmergencia" class="botao-emergencia">SOS</button>
+<button onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'" 
+    style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background: red;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 999;
+        font-size: 14px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        transition: transform 0.2s;
+    ">
+    SOS
+</button>
 
-  <script>
-    document.getElementById("botaoEmergencia").addEventListener("click", function() {
-      window.location.href = "https://www.tudogostoso.com.br/receita/23-bolo-simples.html";
-    });
-  </script>
 
-</body>
-</html>
+
