@@ -1,253 +1,273 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caminho Lilás | Ajuda Imediata</title>
-    <style>
-        /* ===== Fonte e base ===== */
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            background-color: #fdf6fa;
-            color: #444;
-            line-height: 1.6;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caminho Lilás | Contatos de Emergência</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===== Fonte e base ===== */ 
+    body { 
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0; 
+      background-color: #fdf6fa; 
+      color: #444;
+      line-height: 1.6;
+    }
 
-        /* ===== Cabeçalho ===== */
-        .header {
-            background: linear-gradient(90deg, #a75ca8, #b66cb8);
-            padding: 1rem 2rem;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    /* ===== Cabeçalho (idêntico ao de Apoio) ===== */
+    .header {
+      background: linear-gradient(90deg, #a75ca8, #b66cb8);
+      padding: 1rem 2rem; /* mesmo espaçamento da página Apoio */
+      width: 100%;
+      box-sizing: border-box;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .logo {
-            font-family: 'Georgia', serif;
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
+    .logo {
+      font-family: 'Georgia', serif;
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: white; /* branco */
+    }
 
-        .nav {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-            margin: 0;
-            padding: 0;
-        }
+    .nav {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
 
-        .nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 300;
-            transition: opacity 0.3s;
-        }
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 300;
+      transition: 0.3s;
+    }
 
-        .nav a:hover {
-            opacity: 0.8;
-        }
+    .nav a:hover {
+      opacity: 0.8;
+    }
 
-        .nav a.active {
-            border-bottom: 2px solid #fff;
-        }
+    .nav a.active {
+      border-bottom: 2px solid #fff;
+      font-weight: 700; /* negrito quando ativo */
+    }
 
-        /* ===== Botões ===== */
-        .btn {
-            display: inline-block;
-            padding: 1rem 1.2rem;
-            border-radius: 10px;
-            font-weight: bold;
-            text-decoration: none;
-            transition: background 0.3s, box-shadow 0.3s;
-            font-size: 1.2em;
-        }
+    /* ===== Menu Responsivo ===== */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
 
-        .btn-primary {
-            background-color: #d46aa0;
-            color: white;
-        }
-        .btn-primary:hover {
-            background-color: #c0508b;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.18);
-        }
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
 
-        .btn-secondary {
-            background-color: #7a3d8a;
-            color: white;
-        }
-        .btn-secondary:hover {
-            background-color: #5e2d68;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.18);
-        }
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+        position: absolute;
+        top: 70px;
+        right: 20px;
+        background-color: #a75ca8;
+        flex-direction: column;
+        width: 200px;
+        border-radius: 10px;
+        padding: 1rem;
+      }
 
-        .btn-tertiary {
-            background-color: #a75ca8;
-            color: white;
-        }
-        .btn-tertiary:hover {
-            background-color: #8c4c8d;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.18);
-        }
+      .nav.active {
+        display: flex;
+      }
 
-        /* ===== Título e subtítulo ===== */
-        .page-title-emergency {
-            text-align: center;
-            margin: 3rem auto 2rem;
-            color: #7a3d8a;
-            font-family: 'Georgia', serif;
-            font-size: 2.8rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
-        }
+      .menu-toggle {
+        display: flex;
+      }
+    }
 
-        .page-subtitle-emergency {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto 3rem;
-            font-size: 1.1em;
-            color: #555;
-        }
+    /* ===== Título e subtítulo ===== */
+    .page-title-emergency {
+      text-align: center;
+      margin: 3rem auto 2rem;
+      color: #7a3d8a; /* roxo como no modelo Apoio */
+      font-family: 'Georgia', serif;
+      font-size: 2.8rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
 
-        /* ===== Contatos de Emergência ===== */
-        .emergency-contacts {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1.5rem;
-            margin: 3rem auto;
-            max-width: 1100px;
-            padding: 0 1rem;
-        }
+    .page-subtitle-emergency {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      font-size: 1.1em;
+      color: #555;
+    }
 
-        .contact-box {
-            flex: 1;
-            min-width: 250px;
-            max-width: 320px;
-            background-color: #fff;
-            border: 2px solid #a75ca8;
-            border-radius: 15px;
-            padding: 2rem;
-            text-align: center;
-            box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
+    /* ===== Contatos de Emergência ===== */
+    .emergency-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 3rem auto;
+      max-width: 1100px;
+      padding: 0 1rem;
+    }
 
-        .contact-box:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-        }
+    .contact-box {
+      flex: 1;
+      min-width: 250px;
+      max-width: 320px;
+      background-color: #fff;
+      border: 2px solid #a75ca8;
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-        .contact-box h3 {
-            color: #ba87a1;
-            font-size: 1.6rem;
-            margin-bottom: 1rem;
-            font-family: 'Georgia', serif;
-        }
+    .contact-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
 
-        .contact-box p {
-            font-size: 1.05em;
-            color: #666;
-            margin-bottom: 1.5rem;
-        }
+    .contact-box h3 {
+      color: #ba87a1;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      font-family: 'Georgia', serif;
+    }
 
-        .contact-box .btn {
-            width: 100%;
-            padding: 1rem 0;
-            font-size: 1.3em;
-        }
+    .contact-box p {
+      font-size: 1.05em;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
 
-        /* ===== Rodapé ===== */
-        .footer {
-            text-align: center;
-            padding: 1rem;
-            background: linear-gradient(90deg, #b66cb8, #a75ca8);
-            color: white;
-            margin-top: 2rem;
-            font-size: 0.9rem;
-        }
+    .contact-box .btn {
+      width: 100%;
+      padding: 1rem 0;
+      font-size: 1.3em;
+    }
 
-        /* ===== Responsividade ===== */
-        @media (max-width: 768px) {
-            .emergency-contacts {
-                flex-direction: column;
-                align-items: center;
-            }
-            .contact-box {
-                width: 100%;
-                max-width: 340px;
-            }
-            .page-title-emergency {
-                font-size: 2.2rem;
-            }
-        }
-    </style>
+    /* ===== Rodapé ===== */
+    .footer {
+      text-align: center;
+      padding: 1rem;
+      background: linear-gradient(90deg, #b66cb8, #a75ca8);
+      color: white;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    /* ===== Responsividade adicional ===== */
+    @media (max-width: 768px) {
+      .emergency-contacts {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-box {
+        width: 100%;
+        max-width: 340px;
+      }
+
+      .page-title-emergency {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-    <!-- Cabeçalho atualizado -->
-    <header class="header">
-        <h1 class="logo">Caminho Lilás</h1>
-        <nav>
-            <ul class="nav">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="violencia.html">Violência Doméstica</a></li>
-                <li><a href="apoio.html">Locais de Apoio</a></li>
-                <li><a href="emergencia.html" class="active">Contatos de Emergência</a></li>
-                <li><a href="faq.html">FAQ</a></li>
-                <li><a href="seguranca.html">Estratégias</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Cabeçalho padronizado -->
+  <header class="header">
+    <h1 class="logo">Caminho Lilás</h1>
 
-    <main class="content">
-        <h1 class="page-title-emergency">Precisa de Ajuda Agora?</h1>
-        <p class="page-subtitle-emergency">Sua segurança é nossa prioridade. Entre em contato com os serviços de emergência e apoio imediatamente.</p>
+    <!-- Botão de menu responsivo -->
+    <div class="menu-toggle" onclick="document.querySelector('.nav').classList.toggle('active')">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
 
-        <section class="emergency-contacts">
-            <div class="contact-box">
-                <h3>Emergência Imediata</h3>
-                <p>Em caso de perigo ou agressão em andamento, ligue para a polícia.</p>
-                <a href="tel:190" class="btn btn-primary">LIGUE 190 (Polícia Militar)</a>
-            </div>
-            <div class="contact-box">
-                <h3>Denúncias e Orientações</h3>
-                <p>Para registrar uma denúncia anônima ou obter informações.</p>
-                <a href="tel:180" class="btn btn-secondary">LIGUE 180 (Central de Atendimento à Mulher)</a>
-            </div>
-            <div class="contact-box">
-                <h3>Direitos Humanos e Violência</h3>
-                <p>Para denunciar violações de direitos humanos contra mulheres.</p>
-                <a href="tel:100" class="btn btn-tertiary">LIGUE 100 (Disque Direitos Humanos)</a>
-            </div>
-        </section>
-    </main>
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="violencia.html">Violência Doméstica</a></li>
+        <li><a href="apoio.html">Locais de Apoio</a></li>
+        <li><a href="emergencia.html" class="active">Contatos de Emergência</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="seguranca.html">Estratégias</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <footer class="footer">
-        <p>&copy; 2025 Caminho Lilás. Todos os direitos reservados.</p>
-    </footer>
+  <main class="content">
+    <h1 class="page-title-emergency">Precisa de Ajuda Agora?</h1>
+    <p class="page-subtitle-emergency">
+      Sua segurança é nossa prioridade. Entre em contato com os serviços de emergência e apoio imediatamente.
+    </p>
 
-    </body>
-    </html>
+    <section class="emergency-contacts">
+      <div class="contact-box">
+        <h3>Emergência Imediata</h3>
+        <p>Em caso de perigo ou agressão em andamento, ligue para a polícia.</p>
+        <a href="tel:190" class="btn btn-primary">LIGUE 190 (Polícia Militar)</a>
+      </div>
 
-<!-- Botão de Emergência fixo -->
-<button onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'" 
+      <div class="contact-box">
+        <h3>Denúncias e Orientações</h3>
+        <p>Para registrar uma denúncia anônima ou obter informações.</p>
+        <a href="tel:180" class="btn btn-secondary">LIGUE 180 (Central de Atendimento à Mulher)</a>
+      </div>
+
+      <div class="contact-box">
+        <h3>Direitos Humanos e Violência</h3>
+        <p>Para denunciar violações de direitos humanos contra mulheres.</p>
+        <a href="tel:100" class="btn btn-tertiary">LIGUE 100 (Disque Direitos Humanos)</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 Caminho Lilás. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Botão de Emergência fixo -->
+  <button onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'" 
     style="
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 60px;
-        height: 60px;
-        background: red;
-        color: white;
-        font-weight: bold;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        z-index: 999;
-        font-size: 14px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        transition: transform 0.2s;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background: red;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 999;
+      font-size: 14px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
     ">
     SOS
-</button>
+  </button>
+
+</body>
+</html>

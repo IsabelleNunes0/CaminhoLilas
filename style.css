@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-/* ===== Fonte e base ===== */
+ /* ===== Fonte e base ===== */
 body {
   font-family: 'Segoe UI', sans-serif;
   margin: 0;
@@ -359,7 +358,6 @@ body {
   color: #7a3d8a;
   font-family: 'Georgia', serif;
 }
-=======
 /* ===== Fonte e base ===== */
 body {
   font-family: 'Segoe UI', sans-serif;
@@ -412,7 +410,7 @@ body {
 .hero {
   position: relative;
   text-align: center;
-  color: white;
+  color: rgb(255, 255, 255);
 }
 
 .hero-img {
@@ -632,4 +630,3 @@ body {
     border-bottom: 2px solid #a75ca8;
     padding-bottom: 5px;
 }
->>>>>>> b631d469e078d267a8bd20462d02fffc9f6a4d36

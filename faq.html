@@ -1,169 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caminho Lilás | FAQ</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            margin: 0;
-            background-color: #fdf6fa;
-            color: #444;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caminho Lilás | Perguntas Frequentes</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===== Ajustes específicos da página FAQ ===== */
+    main {
+      flex: 1;
+      padding: 3rem 1rem;
+      max-width: 900px;
+      margin: 0 auto;
+    }
 
-        .header {
-            background: linear-gradient(90deg, #a75ca8, #b66cb8);
-            padding: 1rem 2rem;
-            color: white;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+    /* Título da página em roxo */
+    main h1 {
+      color: #7a3d8a;
+      font-family: 'Georgia', serif;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
 
-        .logo {
-            font-family: 'Georgia', serif;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white; /* Alteração feita aqui */
-        }
+    /* Caixa FAQ */
+    .faq {
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      background: #fff;
+      border-left: 6px solid #a75ca8;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      transition: transform 0.3s ease;
+    }
 
-        .nav {
-            list-style: none;
-            display: flex;
-            gap: 1.5rem;
-            margin: 0;
-            padding: 0;
-        }
+    .faq:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
 
-        .nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 300;
-        }
+    .faq h2 {
+      color: #7a3d8a;
+      font-family: 'Georgia', serif;
+      font-size: 1.3rem;
+      margin-bottom: .8rem;
+    }
 
-        .nav a.active {
-            border-bottom: 2px solid #fff;
-        }
+    .faq p {
+      font-size: 1rem;
+      color: #555;
+      margin: 0;
+    }
 
-        main {
-            flex: 1;
-            padding: 3rem 1rem;
-            max-width: 900px;
-            margin: 0 auto;
-        }
+    /* Garante o corpo em layout flex */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
 
-        h1 {
-            color: #7a3d8a;
-            font-family: 'Georgia', serif;
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .faq {
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background: #fff;
-            border-left: 6px solid #a75ca8;
-            border-radius: 12px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-        }
-
-        .faq h2 {
-            color: #7a3d8a;
-            font-family: 'Georgia', serif;
-            font-size: 1.3rem;
-            margin-bottom: .8rem;
-        }
-
-        .faq p {
-            font-size: 1rem;
-            color: #555;
-            margin: 0;
-        }
-
-        .footer {
-            text-align: center;
-            padding: 1rem;
-            background: linear-gradient(90deg, #b66cb8, #a75ca8);
-            color: white;
-            font-size: 0.9rem;
-        }
-    </style>
+    /* Título principal do site branco */
+    .logo {
+      color: #ffffff !important;
+    }
+  </style>
 </head>
+
 <body>
-    <header class="header">
-        <h1 class="logo">Caminho Lilás</h1>
-        <nav>
-            <ul class="nav">
-                <li><a href="index.html">Início</a></li>
-                <li><a href="violencia.html">Violência Doméstica</a></li>
-                <li><a href="apoio.html">Locais de Apoio</a></li>
-                <li><a href="emergencia.html">Contatos de Emergência</a></li>
-                <li><a href="faq.html" class="active">FAQ</a></li>
-                <li><a href="seguranca.html">Estratégias</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header class="header">
+    <h1 class="logo">Caminho Lilás</h1>
 
+    <div class="menu-toggle" onclick="document.querySelector('.nav').classList.toggle('active')">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
 
-    <main>
-        <h1>FAQ — Perguntas Frequentes</h1>
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="violencia.html">Violência Doméstica</a></li>
+        <li><a href="apoio.html">Locais de Apoio</a></li>
+        <li><a href="emergencia.html">Contatos de Emergência</a></li>
+        <li><a href="faq.html" class="active">FAQ</a></li>
+        <li><a href="seguranca.html">Estratégias</a></li>
+      </ul>
+    </nav>
+  </header>
 
-        <div class="faq">
-            <h2>1. Quais documentos é preciso para denunciar de forma on-line?</h2>
-            <p>Pode ser anônima, sem documentos obrigatórios. Se quiser anexar provas: RG, prints, fotos, vídeos, boletim de ocorrencia ou laudos.
-            </p>
-        </div>
+  <main>
+    <h1>FAQ — Perguntas Frequentes</h1>
 
-        <div class="faq">
-            <h2>2. Como posso pedir ajuda imediata?</h2>
-            <p>Em situação de risco, ligue para o 190 (Polícia Militar). Para denúncias e orientações, utilize o 180 (Central de Atendimento à Mulher) ou o 100 (Direitos Humanos).</p>
-        </div>
+    <div class="faq">
+      <h2>1. Quais documentos é preciso para denunciar de forma on-line?</h2>
+      <p>Pode ser anônima, sem documentos obrigatórios. Se quiser anexar provas: RG, prints, fotos, vídeos, boletim de ocorrência ou laudos.</p>
+    </div>
 
-        <div class="faq">
-            <h2>3. Posso fazer denúncia anônima?</h2>
-            <p>Sim. O canal 180 e o Disque 100 permitem denúncias anônimas, garantindo que a identidade da pessoa denunciante seja preservada.</p>
-        </div>
+    <div class="faq">
+      <h2>2. Como posso pedir ajuda imediata?</h2>
+      <p>Em situação de risco, ligue para o 190 (Polícia Militar). Para denúncias e orientações, utilize o 180 (Central de Atendimento à Mulher) ou o 100 (Direitos Humanos).</p>
+    </div>
 
-        <div class="faq">
-            <h2>4. Onde encontro apoio psicológico e jurídico?</h2>
-            <p>Existem centros de referência da mulher, defensoria pública e ONGs especializadas que oferecem apoio gratuito. Veja mais em nossa seção <a href="apoio.html">Locais de Apoio</a>.</p>
-        </div>
+    <div class="faq">
+      <h2>3. Posso fazer denúncia anônima?</h2>
+      <p>Sim. O canal 180 e o Disque 100 permitem denúncias anônimas, garantindo que a identidade da pessoa denunciante seja preservada.</p>
+    </div>
 
-        <div class="faq">
-            <h2>5. Quais documentos é preciso para denunciar presencialmente?</h2>
-            <p>Levar RG, CPF e comprovante de residência. Se tiver, provas do caso (fotos, vídeos, mensagens, laudos ou BO). </p>
-        </div>
-    </main>
+    <div class="faq">
+      <h2>4. Onde encontro apoio psicológico e jurídico?</h2>
+      <p>Existem centros de referência da mulher, defensoria pública e ONGs especializadas que oferecem apoio gratuito. Veja mais em nossa seção <a href="apoio.html">Locais de Apoio</a>.</p>
+    </div>
 
-    <!-- Rodapé -->
+    <div class="faq">
+      <h2>5. Quais documentos é preciso para denunciar presencialmente?</h2>
+      <p>Levar RG, CPF e comprovante de residência. Se tiver, provas do caso (fotos, vídeos, mensagens, laudos ou BO).</p>
+    </div>
+  </main>
+
   <footer class="footer">
     <p>&copy; 2025 Caminho Lilás. Todos os direitos reservados.</p>
   </footer>
 
-     <!-- Botão de Emergência fixo -->
-<button onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'" 
+  <button onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'"
     style="
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 60px;
-        height: 60px;
-        background: red;
-        color: white;
-        font-weight: bold;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        z-index: 999;
-        font-size: 14px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        transition: transform 0.2s;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background: red;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 999;
+      font-size: 14px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
     ">
     SOS
-</button>
+  </button>
+
+</body>
+</html>
