@@ -1,37 +1,38 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Caminho Lilás | Contatos de Emergência</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Caminho Lilás | Ajuda Imediata</title>
   <link rel="stylesheet" href="style.css">
   <style>
     /* ===== Fonte e base ===== */ 
-    body { 
+    body {
       font-family: 'Segoe UI', sans-serif;
-      margin: 0; 
-      background-color: #fdf6fa; 
+      margin: 0;
+      background-color: #fdf6fa;
       color: #444;
       line-height: 1.6;
     }
 
-    /* ===== Cabeçalho (idêntico ao de Apoio) ===== */
+    /* ===== Cabeçalho ===== */
     .header {
       background: linear-gradient(90deg, #a75ca8, #b66cb8);
-      padding: 1rem 2rem; /* mesmo espaçamento da página Apoio */
+      padding: 1rem 2rem; /* mesmo tamanho da barra de 'estratégias' */
       width: 100%;
       box-sizing: border-box;
       color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
     }
 
     .logo {
       font-family: 'Georgia', serif;
       font-size: 1.6rem;
       font-weight: bold;
-      color: white; /* branco */
+      color: white;
     }
 
     .nav {
@@ -46,7 +47,7 @@
       color: white;
       text-decoration: none;
       font-weight: 300;
-      transition: 0.3s;
+      transition: opacity 0.3s;
     }
 
     .nav a:hover {
@@ -54,8 +55,8 @@
     }
 
     .nav a.active {
-      border-bottom: 2px solid #fff;
-      font-weight: 700; /* negrito quando ativo */
+      border-bottom: 2px solid #a75ca8;
+      font-weight: 700; /* negrito no item ativo */
     }
 
     /* ===== Menu Responsivo ===== */
@@ -78,7 +79,7 @@
       .nav {
         display: none;
         position: absolute;
-        top: 70px;
+        top: 65px; /* ajustado para o novo tamanho da barra */
         right: 20px;
         background-color: #a75ca8;
         flex-direction: column;
@@ -96,11 +97,31 @@
       }
     }
 
+    /* ===== Botões ===== */
+    .btn {
+      display: inline-block;
+      padding: 1rem 1.2rem;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s, box-shadow 0.3s;
+      font-size: 1.2em;
+    }
+
+    .btn-primary { background-color: #d46aa0; color: white; }
+    .btn-primary:hover { background-color: #c0508b; box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
+
+    .btn-secondary { background-color: #7a3d8a; color: white; }
+    .btn-secondary:hover { background-color: #5e2d68; box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
+
+    .btn-tertiary { background-color: #a75ca8; color: white; }
+    .btn-tertiary:hover { background-color: #8c4c8d; box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
+
     /* ===== Título e subtítulo ===== */
     .page-title-emergency {
       text-align: center;
       margin: 3rem auto 2rem;
-      color: #7a3d8a; /* roxo como no modelo Apoio */
+      color: #7a3d8a;
       font-family: 'Georgia', serif;
       font-size: 2.8rem;
       text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
@@ -198,7 +219,7 @@
     <h1 class="logo">Caminho Lilás</h1>
 
     <!-- Botão de menu responsivo -->
-    <div class="menu-toggle" onclick="document.querySelector('.nav').classList.toggle('active')">
+    <div class="menu-toggle" onclick="document.querySelector('.nav').classList.toggle('active')" aria-label="Abrir menu">
       <div></div>
       <div></div>
       <div></div>
@@ -218,9 +239,7 @@
 
   <main class="content">
     <h1 class="page-title-emergency">Precisa de Ajuda Agora?</h1>
-    <p class="page-subtitle-emergency">
-      Sua segurança é nossa prioridade. Entre em contato com os serviços de emergência e apoio imediatamente.
-    </p>
+    <p class="page-subtitle-emergency">Sua segurança é nossa prioridade. Entre em contato com os serviços de emergência e apoio imediatamente.</p>
 
     <section class="emergency-contacts">
       <div class="contact-box">
