@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Caminho Lilás | Chatbot</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ====== Estrutura Geral ====== */
+    body {
+      background-color: #fdf6fa;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      color: #333;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .chat-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+
+    .chat-box {
+      width: 100%;
+      max-width: 480px;
+      background: white;
+      border: 2px solid #a75ca8;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .chat-header {
+      background: linear-gradient(90deg, #a75ca8, #b66cb8);
+      color: #fff;
+      text-align: center;
+      padding: 1rem;
+      font-weight: 600;
+    }
+
+    .chat-body {
+      flex: 1;
+      padding: 1rem;
+      overflow-y: auto;
+      background: #fef9ff;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      scroll-behavior: smooth;
+    }
+
+    .message {
+      max-width: 80%;
+      padding: 0.8rem 1rem;
+      border-radius: 12px;
+      line-height: 1.5;
+      word-wrap: break-word;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .bot {
+      background: #f1dcf3;
+      align-self: flex-start;
+    }
+
+    .user {
+      background: #e2c3e6;
+      align-self: flex-end;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ====== Efeito de digitação ====== */
+    .typing {
+      display: inline-block;
+      background: #f1dcf3;
+      padding: 0.6rem 1rem;
+      border-radius: 12px;
+      align-self: flex-start;
+      animation: fadeIn 0.2s ease;
+    }
+
+    .dot {
+      height: 6px;
+      width: 6px;
+      background-color: #a75ca8;
+      border-radius: 50%;
+      display: inline-block;
+      margin-right: 3px;
+      animation: blink 1.4s infinite both;
+    }
+
+    .dot:nth-child(2) { animation-delay: 0.2s; }
+    .dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes blink {
+      0%, 80%, 100% { opacity: 0; }
+      40% { opacity: 1; }
+    }
+
+    /* ====== Rodapé Chat ====== */
+    .chat-footer {
+      background: #fafafa;
+      border-top: 1px solid #ddd;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    textarea {
+      width: 90%;
+      height: 70px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 0.5rem;
+      resize: none;
+      font-family: inherit;
+      margin-bottom: 0.5rem;
+    }
+
+    button {
+      background: linear-gradient(90deg, #a75ca8, #b66cb8);
+      color: white;
+      border: none;
+      border-radius: 10px;
+      padding: 0.6rem 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      width: 90%;
+      max-width: 320px;
+      margin-top: 0.4rem;
+    }
+
+    button:hover {
+      opacity: 0.9;
+      transform: scale(1.02);
+    }
+
+    footer {
+      background: linear-gradient(90deg, #b66cb8, #a75ca8);
+      color: white;
+      text-align: center;
+      padding: 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 600px) {
+      .chat-box {
+        max-width: 95%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Cabeçalho padrão -->
+  <header class="header">
+    <h1 class="logo">Caminho Lilás</h1>
+
+    <div class="menu-toggle" onclick="document.querySelector('.nav').classList.toggle('active')">
+      <div></div><div></div><div></div>
+    </div>
+
+    <nav>
+      <ul class="nav">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="violencia.html">Violência Doméstica</a></li>
+        <li><a href="apoio.html">Locais de Apoio</a></li>
+        <li><a href="emergencia.html">Contatos de Emergência</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="seguranca.html">Estratégias</a></li>
+        <li><a href="chatbot.html" class="active">Chatbot</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Chatbot -->
+  <main class="chat-container">
+    <div class="chat-box">
+      <div class="chat-header">Atendimento de Acolhimento</div>
+      <div class="chat-body" id="chat-body">
+        <div class="message bot">
+          Olá, seja bem-vinda ao Caminho Lilás.💜<br><br>
+          Não precisa se identificar. Todas as mensagens aqui são sigilosas e anônimas.<br><br>
+          Como podemos te ajudar hoje?
+        </div>
+      </div>
+      <div class="chat-footer" id="chat-footer">
+        <button onclick="startStory()">Quero compartilhar minha história</button>
+      </div>
+    </div>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 Caminho Lilás. Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    const chatBody = document.getElementById("chat-body");
+    const chatFooter = document.getElementById("chat-footer");
+
+    function scrollToBottom() {
+      chatBody.scrollTop = chatBody.scrollHeight;
+    }
+
+    function addMessage(content, sender) {
+      const msg = document.createElement("div");
+      msg.classList.add("message", sender);
+      msg.innerHTML = content;
+      chatBody.appendChild(msg);
+      scrollToBottom();
+    }
+
+    function showTyping(callback, delay = 1500) {
+      const typing = document.createElement("div");
+      typing.classList.add("typing");
+      typing.innerHTML = '<span class="dot"></span><span class="dot"></span><span class="dot"></span>';
+      chatBody.appendChild(typing);
+      scrollToBottom();
+
+      setTimeout(() => {
+        typing.remove();
+        callback();
+        scrollToBottom();
+      }, delay);
+    }
+
+    function startStory() {
+      addMessage("Quero compartilhar minha história", "user");
+      chatFooter.innerHTML = `
+        <textarea id="userText" placeholder="Escreva aqui sua história..."></textarea><br>
+        <button onclick="sendStory()">Enviar</button>
+      `;
+    }
+
+    function sendStory() {
+      const text = document.getElementById("userText").value.trim();
+      if (!text) return;
+      addMessage(text, "user");
+      chatFooter.innerHTML = "";
+      showTyping(() => {
+        addMessage("Obrigada por confiar em nós e compartilhar sua história. Agora, precisamos saber: você está em situação de perigo neste momento?", "bot");
+        chatFooter.innerHTML = `
+          <button onclick="dangerChoice('Sim')">Sim</button>
+          <button onclick="dangerChoice('Não')">Não</button>
+        `;
+      });
+    }
+
+    function dangerChoice(choice) {
+      addMessage(choice, "user");
+      chatFooter.innerHTML = "";
+      if (choice === "Sim") {
+        showTyping(() => {
+          addMessage(
+            "Sentimos muito que você esteja nessa situação. Procure um local seguro e entre em contato imediatamente com os serviços de emergência:<br><br>190 — Polícia Militar<br>180 — Central de Atendimento à Mulher.",
+            "bot"
+          );
+          nextOptions();
+        });
+      } else {
+        showTyping(() => {
+          addMessage(
+            "Ficamos aliviados em saber que você está em segurança. Mesmo assim, é importante conhecer suas opções de proteção e apoio.",
+            "bot"
+          );
+          nextOptions();
+        });
+      }
+    }
+
+    function nextOptions() {
+      showTyping(() => {
+        addMessage("Como posso te ajudar agora?", "bot");
+        chatFooter.innerHTML = `
+          <button onclick="openTopic('orientacoes')">Receber orientações seguras</button>
+          <button onclick="openTopic('denuncia')">Saber mais como denunciar e sobre medidas protetivas</button>
+          <button onclick="openTopic('pedidoajuda')">Formas discretas de pedir ajuda</button>
+          <button onclick="openTopic('direitos')">Conhecer meus direitos</button>
+          <button onclick="endChat()">Encerrar atendimento</button>
+        `;
+      });
+    }
+
+    function openTopic(topic) {
+      if (topic === "orientacoes") {
+        addMessage("Receber orientações seguras", "user");
+        showTyping(() => {
+          addMessage(
+            "Algumas orientações importantes:<br><br>• Se possível, guarde uma pequena quantia em dinheiro ou tenha uma conta bancária separada. A independência financeira é essencial ao buscar a saída.<br>•  Guarde as evidências tire fotos de lesões, objetos quebrados ou danificados e faça prints de mensagens de ameaças.<br>• Evite confrotos perigosos. Em momentos de briga, evite correr para locais onde existam objetos que possam ser usados como arma (cozinha, área de ferramentas, garagem).",
+            "bot"
+          );
+        });
+      }
+
+      if (topic === "denuncia") {
+        addMessage("Saber sobre denúncia e medidas protetivas", "user");
+        showTyping(() => {
+          addMessage(
+            "A denuncia é o primeiro passo legal e formal para quebrar o ciclo de violência, que tende a se agravar com o tempo e a se repetir. Ligue 180 ou procure a Delegacia da Mulher mais próxima.<br><br>A Medida Protetiva obriga o agressor a manter distância e, caso descumpra, acione 190 imediatamente.",
+            "bot"
+          );
+        });
+      }
+
+      if (topic === "pedidoajuda") {
+        addMessage("Formas discretas de pedir ajuda", "user");
+        showTyping(() => {
+          addMessage(
+            "Você pode buscar ajuda discretamente:<br><br>• Desenhe um X na palma da mão e mostre discretamente para o atendente. Este é um programa nacional. Farmácias, repartições públicas e agências bancárias aderiram à campanha.<br>• Ligue para a policia e simule um pedido de uma pizza, responda com palavras combinadas.<br>• Crie um código secreto e envie uma mensagem com código secreto a alguém de confiança.",
+            "bot"
+          );
+        });
+      }
+
+      if (topic === "direitos") {
+        addMessage("Conhecer meus direitos", "user");
+        showTyping(() => {
+          addMessage(
+            "Toda mulher tem direitos garantidos por lei. Você pode saber mais acessando nossa página dedicada.<br><br><a href='direitos.html' target='_blank' style='color:#a75ca8;text-decoration:underline;'>Clique aqui para conhecer seus direitos.</a>",
+            "bot"
+          );
+        });
+      }
+
+      setTimeout(() => nextOptions(), 3000);
+    }
+
+    function endChat() {
+      addMessage("Encerrar atendimento", "user");
+      showTyping(() => {
+        addMessage(
+          "Agradecemos por conversar conosco. Lembre-se: você não está sozinha. O Caminho Lilás estará sempre disponível para acolher e orientar.",
+          "bot"
+        );
+        setTimeout(() => location.reload(), 4000);
+      });
+    }
+  </script>
+</body>
+</html>
+
+<!-- Botão de Emergência fixo -->
+<button onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'" 
+    style="
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 60px;
+        height: 60px;
+        background: red;
+        color: white;
+        font-weight: bold;
+        border: none;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 999;
+        font-size: 14px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        transition: transform 0.2s;
+    ">
+    SOS
+</button>
+
+<script src="main.js"></script>
+
+</body>
+</html>

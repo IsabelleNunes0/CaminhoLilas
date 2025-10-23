@@ -2,8 +2,9 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Caminho Lilás | Estratégias de Segurança</title>
+
   <style>
     /* ===== Fonte e base ===== */
     body {
@@ -32,7 +33,7 @@
       font-family: 'Georgia', serif;
       font-size: 1.5rem;
       font-weight: bold;
-      color: white; /* logo em branco */
+      color: white;
     }
 
     .nav {
@@ -55,16 +56,16 @@
       opacity: 0.8;
     }
 
-    /* === CORREÇÃO: negrito ao clicar / link ativo / foco === */
+    /* === Link ativo / foco === */
     .nav a:active,
     .nav a:focus,
     .nav a.active {
       border-bottom: 2px solid #a75ca8;
-      font-weight: 700; /* negrito */
-      outline: none;    /* remove outline padrão no foco visual */
+      font-weight: 700;
+      outline: none;
     }
 
-    /* Menu Hamburguer para mobile */
+    /* ===== Menu Hamburguer (mobile) ===== */
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -83,10 +84,10 @@
     .page-title-strategy {
       text-align: center;
       margin: 3rem auto 2rem;
-      color: #7a3d8a; /* Roxo */
+      color: #7a3d8a;
       font-family: 'Georgia', serif;
       font-size: 2.8rem;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     }
 
     .page-subtitle-strategy {
@@ -153,7 +154,7 @@
       margin-bottom: 0.6rem;
       font-size: 0.95em;
       color: #444;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     }
 
     /* ===== Rodapé ===== */
@@ -172,13 +173,16 @@
         flex-direction: column;
         align-items: center;
       }
+
       .strategy-box {
         width: 100%;
         max-width: 340px;
       }
+
       .page-title-strategy {
         font-size: 2.2rem;
       }
+
       .nav {
         display: none;
         flex-direction: column;
@@ -187,12 +191,15 @@
         text-align: center;
         padding: 1rem 0;
       }
+
       .nav.active {
         display: flex;
       }
+
       .menu-toggle {
         display: flex;
       }
+
       .header {
         flex-direction: column;
         align-items: flex-start;
@@ -200,8 +207,8 @@
     }
   </style>
 </head>
-<body>
 
+<body>
   <!-- Cabeçalho -->
   <header class="header">
     <h1 class="logo">Caminho Lilás</h1>
@@ -220,6 +227,7 @@
         <li><a href="emergencia.html">Contatos de Emergência</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="seguranca.html" class="active">Estratégias</a></li>
+        <li><a href="chatbot.html">Chatbot</a></li>
       </ul>
     </nav>
   </header>
@@ -227,18 +235,20 @@
   <!-- Conteúdo -->
   <main class="content">
     <h1 class="page-title-strategy">Estratégias de Segurança</h1>
-    <p class="page-subtitle-strategy">Medidas práticas para proteger você em situações de risco. Confira dicas essenciais que podem fortalecer sua segurança no dia a dia.</p>
+    <p class="page-subtitle-strategy">
+      Medidas práticas para proteger você em situações de risco.
+      Confira dicas essenciais que podem fortalecer sua segurança no dia a dia.
+    </p>
 
     <section class="strategy-cards">
       <div class="strategy-box">
-  <h3>Segurança Digital Discreta</h3>
-  <p>Dicas rápidas para proteger sua presença digital.</p>
-  <ul>
-    <li> Utilize navegação privada para não salvar histórico local.</li>
-    <li>Utilize o botão de emergência/disfarce do nosso site, que, para mostrar uma página inofensiva.</li>
-    
-</div>
-
+        <h3>Segurança Digital Discreta</h3>
+        <p>Dicas rápidas para proteger sua presença digital.</p>
+        <ul>
+          <li>Utilize navegação privada para não salvar histórico local.</li>
+          <li>Utilize o botão de emergência/disfarce do nosso site, que, para mostrar uma página inofensiva.</li>
+        </ul>
+      </div>
 
       <div class="strategy-box">
         <h3>Planejamento Pessoal</h3>
@@ -277,27 +287,30 @@
     <p>&copy; 2025 Caminho Lilás. Todos os direitos reservados.</p>
   </footer>
 
-  <!-- Botão de Emergência fixo -->
-  <button onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'"
+  <!-- Botão de Emergência -->
+  <button
+    onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'"
     style="
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 60px;
-        height: 60px;
-        background: red;
-        color: white;
-        font-weight: bold;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        z-index: 999;
-        font-size: 14px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        transition: transform 0.2s;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background: red;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 999;
+      font-size: 14px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
     ">
     SOS
   </button>
 
+  <script src="main.js"></script> 
+  
 </body>
 </html>

@@ -8,7 +8,6 @@
 </head>
 
 <body>
-
   <!-- Cabeçalho -->
   <header class="header">
     <h1 class="logo">Caminho Lilás</h1>
@@ -20,6 +19,7 @@
       <div></div>
     </div>
 
+    <!-- Navegação -->
     <nav>
       <ul class="nav">
         <li><a href="index.html" class="active">Início</a></li>
@@ -28,16 +28,22 @@
         <li><a href="emergencia.html">Contatos de Emergência</a></li>
         <li><a href="faq.html">FAQ</a></li>
         <li><a href="seguranca.html">Estratégias</a></li>
+        <li><a href="chatbot.html">Chatbot</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Hero -->
+  <!-- Seção Hero -->
   <section class="hero">
     <img src="img/IMG_7507.jpeg.jpeg" alt="Caminho Lilás" class="hero-img">
+
     <div class="hero-text">
       <h1>Você não está sozinha</h1>
-      <p>O Caminho Lilás é um espaço seguro para acolher, apoiar e informar. Aqui você encontra força e ajuda para seguir em frente.</p>
+      <p>
+        O Caminho Lilás é um espaço seguro para acolher, apoiar e informar.
+        Aqui você encontra força e ajuda para seguir em frente.
+      </p>
+
       <div class="btn-group">
         <a href="emergencia.html" class="btn btn-primary">Preciso de ajuda agora</a>
         <a href="apoio.html" class="btn btn-secondary">Quero saber mais</a>
@@ -46,20 +52,27 @@
   </section>
 
   <!-- Seção Sobre -->
-  <div class="info-box">
+  <section class="info-box">
     <h2>Sobre o Caminho Lilás</h2>
-    <p>O Caminho Lilás é um espaço de apoio e acolhimento, criado para oferecer informações e orientação às mulheres que enfrentam situações de vulnerabilidade. Nosso objetivo é garantir segurança, apoio emocional e informação de qualidade.</p>
+    <p>
+      O Caminho Lilás é um espaço de apoio e acolhimento, criado para oferecer informações e orientação às mulheres
+      que enfrentam situações de vulnerabilidade. Nosso objetivo é garantir segurança, apoio emocional e informação de qualidade.
+    </p>
     <a href="sobre.html" class="btn-link">Saiba mais</a>
-  </div>
+  </section>
 
-  <!-- Nova seção Violência Doméstica -->
-  <div class="info-box">
+  <!-- Seção Violência Doméstica -->
+  <section class="info-box">
     <h2>Violência Doméstica</h2>
-    <p>A violência doméstica é uma violação dos direitos humanos que afeta milhares de mulheres todos os anos. Envolve agressões físicas, psicológicas, sexuais, patrimoniais e morais dentro do ambiente familiar ou de convivência. Reconhecer os sinais e buscar ajuda é fundamental para romper esse ciclo.</p>
+    <p>
+      A violência doméstica é uma violação dos direitos humanos que afeta milhares de mulheres todos os anos.
+      Envolve agressões físicas, psicológicas, sexuais, patrimoniais e morais dentro do ambiente familiar ou de convivência.
+      Reconhecer os sinais e buscar ajuda é fundamental para romper esse ciclo.
+    </p>
     <a href="violencia.html" class="btn-link">Saiba mais</a>
-  </div>
+  </section>
 
-  <!-- Mini card: Conheça seus Direitos -->
+  <!-- Mini Card: Conheça seus Direitos -->
   <section class="cards-container" aria-label="Atalhos rápidos">
     <a class="card" href="direitos.html">
       <h3>Conheça seus Direitos</h3>
@@ -73,10 +86,12 @@
       <p>“Aqui encontrei informações e coragem para buscar ajuda.”</p>
       <span>— Ana</span>
     </div>
+
     <div class="testimonial">
       <p>“O site me orientou com clareza e me senti acolhida.”</p>
       <span>— Beatriz</span>
     </div>
+
     <div class="testimonial">
       <p>“Saber meus direitos fez toda a diferença na minha decisão.”</p>
       <span>— Laura</span>
@@ -88,27 +103,30 @@
     <p>&copy; 2025 Caminho Lilás. Todos os direitos reservados.</p>
   </footer>
 
-  <!-- Botão de Emergência fixo -->
-<button onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'" 
+  <!-- Botão de Emergência Fixo -->
+  <button 
+    onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'"
     style="
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 60px;
-        height: 60px;
-        background: red;
-        color: white;
-        font-weight: bold;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        z-index: 999;
-        font-size: 14px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        transition: transform 0.2s;
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background: red;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 999;
+      font-size: 14px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
     ">
     SOS
-</button>
+  </button>
+
+  <script src="main.js"></script>
 
 </body>
 </html>

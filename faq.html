@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Caminho Lilás | Perguntas Frequentes</title>
   <link rel="stylesheet" href="style.css">
+
   <style>
     /* ===== Ajustes específicos da página FAQ ===== */
     main {
@@ -67,9 +68,11 @@
 </head>
 
 <body>
+  <!-- Cabeçalho -->
   <header class="header">
     <h1 class="logo">Caminho Lilás</h1>
 
+    <!-- Botão menu responsivo -->
     <div class="menu-toggle" onclick="document.querySelector('.nav').classList.toggle('active')">
       <div></div>
       <div></div>
@@ -84,16 +87,18 @@
         <li><a href="emergencia.html">Contatos de Emergência</a></li>
         <li><a href="faq.html" class="active">FAQ</a></li>
         <li><a href="seguranca.html">Estratégias</a></li>
+        <li><a href="chatbot.html">Chatbot</a></li>
       </ul>
     </nav>
   </header>
 
+  <!-- Conteúdo principal -->
   <main>
     <h1>FAQ — Perguntas Frequentes</h1>
 
     <div class="faq">
       <h2>1. Quais documentos é preciso para denunciar de forma on-line?</h2>
-      <p>Pode ser anônima, sem documentos obrigatórios. Se quiser anexar provas: RG, prints, fotos, vídeos, boletim de ocorrência ou laudos.</p>
+      <p>As denuncias on-lines também podem ser anônimas e sem documentos obrigatórios. Se quiser anexar provas: RG, prints, fotos, vídeos, boletim de ocorrência ou laudos.</p>
     </div>
 
     <div class="faq">
@@ -108,7 +113,9 @@
 
     <div class="faq">
       <h2>4. Onde encontro apoio psicológico e jurídico?</h2>
-      <p>Existem centros de referência da mulher, defensoria pública e ONGs especializadas que oferecem apoio gratuito. Veja mais em nossa seção <a href="apoio.html">Locais de Apoio</a>.</p>
+      <p>Existem centros de referência da mulher, defensoria pública e ONGs especializadas que oferecem apoio gratuito. Veja mais em nossa seção 
+        <a href="apoio.html">Locais de Apoio</a>.
+      </p>
     </div>
 
     <div class="faq">
@@ -117,11 +124,14 @@
     </div>
   </main>
 
+  <!-- Rodapé -->
   <footer class="footer">
     <p>&copy; 2025 Caminho Lilás. Todos os direitos reservados.</p>
   </footer>
 
-  <button onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'"
+  <!-- Botão SOS -->
+  <button
+    onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'"
     style="
       position: fixed;
       bottom: 20px;
@@ -141,6 +151,8 @@
     ">
     SOS
   </button>
+
+  <script src="main.js"></script>
 
 </body>
 </html>
