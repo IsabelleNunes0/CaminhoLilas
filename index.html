@@ -13,7 +13,7 @@
     <h1 class="logo">Caminho Lilás</h1>
 
     <!-- Botão de menu responsivo -->
-    <div class="menu-toggle" onclick="document.querySelector('.nav').classList.toggle('active')">
+    <div class="menu-toggle">
       <div></div>
       <div></div>
       <div></div>
@@ -36,14 +36,12 @@
   <!-- Seção Hero -->
   <section class="hero">
     <img src="img/IMG_7507.jpeg.jpeg" alt="Caminho Lilás" class="hero-img">
-
     <div class="hero-text">
       <h1>Você não está sozinha</h1>
       <p>
         O Caminho Lilás é um espaço seguro para acolher, apoiar e informar.
         Aqui você encontra força e ajuda para seguir em frente.
       </p>
-
       <div class="btn-group">
         <a href="emergencia.html" class="btn btn-primary">Preciso de ajuda agora</a>
         <a href="apoio.html" class="btn btn-secondary">Quero saber mais</a>
@@ -51,7 +49,7 @@
     </div>
   </section>
 
-  <!-- Seção Sobre -->
+  <!-- Seções -->
   <section class="info-box">
     <h2>Sobre o Caminho Lilás</h2>
     <p>
@@ -61,7 +59,6 @@
     <a href="sobre.html" class="btn-link">Saiba mais</a>
   </section>
 
-  <!-- Seção Violência Doméstica -->
   <section class="info-box">
     <h2>Violência Doméstica</h2>
     <p>
@@ -72,7 +69,6 @@
     <a href="violencia.html" class="btn-link">Saiba mais</a>
   </section>
 
-  <!-- Mini Card: Conheça seus Direitos -->
   <section class="cards-container" aria-label="Atalhos rápidos">
     <a class="card" href="direitos.html">
       <h3>Conheça seus Direitos</h3>
@@ -80,31 +76,28 @@
     </a>
   </section>
 
-  <!-- Depoimentos -->
   <section class="testimonials" aria-label="Depoimentos">
     <div class="testimonial">
       <p>“Aqui encontrei informações e coragem para buscar ajuda.”</p>
       <span>— Ana</span>
     </div>
-
     <div class="testimonial">
       <p>“O site me orientou com clareza e me senti acolhida.”</p>
       <span>— Beatriz</span>
     </div>
-
     <div class="testimonial">
       <p>“Saber meus direitos fez toda a diferença na minha decisão.”</p>
       <span>— Laura</span>
     </div>
   </section>
 
-  <!-- Rodapé -->
   <footer class="footer">
     <p>&copy; 2025 Caminho Lilás. Todos os direitos reservados.</p>
   </footer>
 
-  <!-- Botão de Emergência Fixo -->
+  <!-- Botão SOS fixo -->
   <button 
+    class="sos-button"
     onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'"
     style="
       position: fixed;
@@ -127,6 +120,5 @@
   </button>
 
   <script src="main.js"></script>
-
 </body>
 </html>

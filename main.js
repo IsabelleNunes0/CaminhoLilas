@@ -1,4 +1,8 @@
-// Marca o link ativo no menu
+// ============================
+// main.js — Script principal
+// ============================
+
+// === 1. Destacar link ativo na navegação ===
 (function () {
   const current = location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.nav a').forEach(a => {
@@ -7,7 +11,7 @@
   });
 })();
 
-// FAQ - Abre e fecha respostas
+// === 2. FAQ - abrir/fechar respostas ===
 document.querySelectorAll('.faq-question').forEach(item => {
   item.addEventListener('click', () => {
     const parent = item.parentNode;
@@ -15,7 +19,7 @@ document.querySelectorAll('.faq-question').forEach(item => {
   });
 });
 
-// Menu hambúrguer responsivo
+// === 3. Menu hambúrguer para mobile ===
 document.addEventListener('DOMContentLoaded', () => {
   const menuToggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav');
@@ -26,3 +30,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// === 4. Botão SOS com animação ao clicar ===
+const sosButton = document.querySelector('.sos-button');
+if (sosButton) {
+  sosButton.addEventListener('mousedown', () => sosButton.style.transform = 'scale(0.9)');
+  sosButton.addEventListener('mouseup', () => sosButton.style.transform = 'scale(1)');
+}
