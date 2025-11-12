@@ -189,9 +189,9 @@
       <div class="chat-header">Atendimento de Acolhimento</div>
       <div class="chat-body" id="chat-body">
         <div class="message bot">
-          Olá, seja bem-vinda ao Caminho Lilás.💜<br><br>
-          Não precisa se identificar. Todas as mensagens aqui são sigilosas e anônimas.<br><br>
-          Como podemos te ajudar hoje?
+          Olá, seja bem-vinda ao Caminho Lilás.<br><br>
+          Todas as mensagens aqui são sigilosas e anônimas.<br><br>
+          Como podemos te acolher hoje?
         </div>
       </div>
       <div class="chat-footer" id="chat-footer">
@@ -249,7 +249,7 @@
       addMessage(text, "user");
       chatFooter.innerHTML = "";
       showTyping(() => {
-        addMessage("Obrigada por confiar em nós e compartilhar sua história. Agora, precisamos saber: você está em situação de perigo neste momento?", "bot");
+        addMessage("Obrigada por compartilhar sua história. Você está em situação de perigo neste momento?", "bot");
         chatFooter.innerHTML = `
           <button onclick="dangerChoice('Sim')">Sim</button>
           <button onclick="dangerChoice('Não')">Não</button>
@@ -263,7 +263,7 @@
       if (choice === "Sim") {
         showTyping(() => {
           addMessage(
-            "Sentimos muito que você esteja nessa situação. Procure um local seguro e entre em contato imediatamente com os serviços de emergência:<br><br>190 — Polícia Militar<br>180 — Central de Atendimento à Mulher.",
+            "Sinto muito que você esteja em perigo. Procure um local seguro e entre em contato imediatamente com os serviços de emergência:<br><br>190 — Polícia Militar<br>180 — Central de Atendimento à Mulher.",
             "bot"
           );
           nextOptions();
@@ -271,7 +271,7 @@
       } else {
         showTyping(() => {
           addMessage(
-            "Ficamos aliviados em saber que você está em segurança. Mesmo assim, é importante conhecer suas opções de proteção e apoio.",
+            "Fico aliviado em saber que você está em segurança. Mesmo assim, é importante conhecer suas opções de proteção e apoio.",
             "bot"
           );
           nextOptions();
@@ -284,7 +284,7 @@
         addMessage("Como posso te ajudar agora?", "bot");
         chatFooter.innerHTML = `
           <button onclick="openTopic('orientacoes')">Receber orientações seguras</button>
-          <button onclick="openTopic('denuncia')">Saber mais como denunciar e sobre medidas protetivas</button>
+          <button onclick="openTopic('denuncia')">Saber sobre denúncia e medidas protetivas</button>
           <button onclick="openTopic('pedidoajuda')">Formas discretas de pedir ajuda</button>
           <button onclick="openTopic('direitos')">Conhecer meus direitos</button>
           <button onclick="endChat()">Encerrar atendimento</button>
@@ -297,7 +297,7 @@
         addMessage("Receber orientações seguras", "user");
         showTyping(() => {
           addMessage(
-            "Algumas orientações importantes:<br><br>• Se possível, guarde uma pequena quantia em dinheiro ou tenha uma conta bancária separada. A independência financeira é essencial ao buscar a saída.<br>•  Guarde as evidências tire fotos de lesões, objetos quebrados ou danificados e faça prints de mensagens de ameaças.<br>• Evite confrotos perigosos. Em momentos de briga, evite correr para locais onde existam objetos que possam ser usados como arma (cozinha, área de ferramentas, garagem).",
+            "Algumas orientações importantes:<br><br>• Mantenha documentos e contatos de emergência acessíveis.<br>• Combine uma palavra-código com alguém de confiança.<br>• Evite informar o agressor sobre qualquer plano de saída.",
             "bot"
           );
         });
@@ -307,7 +307,7 @@
         addMessage("Saber sobre denúncia e medidas protetivas", "user");
         showTyping(() => {
           addMessage(
-            "A denuncia é o primeiro passo legal e formal para quebrar o ciclo de violência, que tende a se agravar com o tempo e a se repetir. Ligue 180 ou procure a Delegacia da Mulher mais próxima.<br><br>A Medida Protetiva obriga o agressor a manter distância e, caso descumpra, acione 190 imediatamente.",
+            "Denunciar é um passo essencial para interromper a violência. Ligue 180 ou procure a Delegacia da Mulher mais próxima.<br><br>A Medida Protetiva obriga o agressor a manter distância e, caso descumpra, acione 190 imediatamente.",
             "bot"
           );
         });
@@ -317,7 +317,7 @@
         addMessage("Formas discretas de pedir ajuda", "user");
         showTyping(() => {
           addMessage(
-            "Você pode buscar ajuda discretamente:<br><br>• Desenhe um X na palma da mão e mostre discretamente para o atendente. Este é um programa nacional. Farmácias, repartições públicas e agências bancárias aderiram à campanha.<br>• Ligue para a policia e simule um pedido de uma pizza, responda com palavras combinadas.<br>• Crie um código secreto e envie uma mensagem com código secreto a alguém de confiança.",
+            "Você pode buscar ajuda discretamente:<br><br>• Peça uma 'máscara roxa' em farmácias — é um código de socorro reconhecido.<br>• Simule um pedido de pizza e responda com palavras combinadas.<br>• Envie uma mensagem com código secreto a alguém de confiança.",
             "bot"
           );
         });
@@ -350,29 +350,3 @@
 </body>
 </html>
 
-<!-- Botão de Emergência fixo -->
-<button onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'" 
-    style="
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        width: 60px;
-        height: 60px;
-        background: red;
-        color: white;
-        font-weight: bold;
-        border: none;
-        border-radius: 50%;
-        cursor: pointer;
-        z-index: 999;
-        font-size: 14px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-        transition: transform 0.2s;
-    ">
-    SOS
-</button>
-
-<script src="main.js"></script>
-
-</body>
-</html>
