@@ -189,7 +189,7 @@
       <div class="chat-header">Atendimento de Acolhimento</div>
       <div class="chat-body" id="chat-body">
         <div class="message bot">
-          Olá, seja bem-vinda ao Caminho Lilás.<br><br>
+          Olá, seja bem-vinda ao Caminho Lilás. 💜 <br><br>
           Todas as mensagens aqui são sigilosas e anônimas.<br><br>
           Como podemos te acolher hoje?
         </div>
@@ -199,6 +199,29 @@
       </div>
     </div>
   </main>
+
+  <!-- Botão SOS -->
+  <button
+    onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'"
+    style="
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background: red;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 999;
+      font-size: 14px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
+    ">
+    SOS
+  </button>
 
   <!-- Rodapé -->
   <footer>
@@ -294,7 +317,7 @@
 
     function openTopic(topic) {
       if (topic === "orientacoes") {
-        addMessage("Receber orientações seguras", "user");
+        addMessage("Receber Orientações Seguras", "user");
         showTyping(() => {
           addMessage(
             "Algumas orientações importantes:<br><br>• Mantenha documentos e contatos de emergência acessíveis.<br>• Combine uma palavra-código com alguém de confiança.<br>• Evite informar o agressor sobre qualquer plano de saída.",
@@ -304,7 +327,7 @@
       }
 
       if (topic === "denuncia") {
-        addMessage("Saber sobre denúncia e medidas protetivas", "user");
+        addMessage("Saber Sobre Denúncia e Medidas Protetivas", "user");
         showTyping(() => {
           addMessage(
             "Denunciar é um passo essencial para interromper a violência. Ligue 180 ou procure a Delegacia da Mulher mais próxima.<br><br>A Medida Protetiva obriga o agressor a manter distância e, caso descumpra, acione 190 imediatamente.",
@@ -314,17 +337,17 @@
       }
 
       if (topic === "pedidoajuda") {
-        addMessage("Formas discretas de pedir ajuda", "user");
+        addMessage("Formas Discretas de Pedir Ajuda", "user");
         showTyping(() => {
           addMessage(
-            "Você pode buscar ajuda discretamente:<br><br>• Peça uma 'máscara roxa' em farmácias — é um código de socorro reconhecido.<br>• Simule um pedido de pizza e responda com palavras combinadas.<br>• Envie uma mensagem com código secreto a alguém de confiança.",
+            "Você pode Buscar Ajuda Discretamente:<br><br>• Peça uma 'máscara roxa' em farmácias — é um código de socorro reconhecido.<br>• Simule um pedido de pizza e responda com palavras combinadas.<br>• Envie uma mensagem com código secreto a alguém de confiança.",
             "bot"
           );
         });
       }
 
       if (topic === "direitos") {
-        addMessage("Conhecer meus direitos", "user");
+        addMessage("Conhecer meus Direitos", "user");
         showTyping(() => {
           addMessage(
             "Toda mulher tem direitos garantidos por lei. Você pode saber mais acessando nossa página dedicada.<br><br><a href='direitos.html' target='_blank' style='color:#a75ca8;text-decoration:underline;'>Clique aqui para conhecer seus direitos.</a>",
@@ -337,7 +360,7 @@
     }
 
     function endChat() {
-      addMessage("Encerrar atendimento", "user");
+      addMessage("Encerrar Atendimento", "user");
       showTyping(() => {
         addMessage(
           "Agradecemos por conversar conosco. Lembre-se: você não está sozinha. O Caminho Lilás estará sempre disponível para acolher e orientar.",
@@ -349,4 +372,3 @@
   </script>
 </body>
 </html>
-

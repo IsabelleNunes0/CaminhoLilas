@@ -8,6 +8,15 @@
 
   <style>
     /* ===== Ajustes específicos da página FAQ ===== */
+    body {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fdf6fa;
+    }
+
     main {
       flex: 1;
       padding: 3rem 1rem;
@@ -53,14 +62,7 @@
       margin: 0;
     }
 
-    /* Garante o corpo em layout flex */
-    body {
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    /* Título principal do site branco */
+    /* Garante o título principal do site branco */
     .logo {
       color: #ffffff !important;
     }
@@ -73,15 +75,15 @@
   <header class="header">
     <h1 class="logo">Caminho Lilás</h1>
 
-    <div class="menu-toggle" aria-label="Abrir menu">
-  <div></div>
-  <div></div>
-  <div></div>
-</div>
-
+    <!-- Botão menu hambúrguer -->
+    <div class="menu-toggle" id="menu-toggle" aria-label="Abrir menu">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
 
     <nav>
-      <ul class="nav">
+      <ul class="nav" id="nav-menu">
         <li><a href="index.html">Início</a></li>
         <li><a href="violencia.html">Violência Doméstica</a></li>
         <li><a href="apoio.html">Locais de Apoio</a></li>
@@ -99,7 +101,7 @@
 
     <div class="faq">
       <h2>1. Quais documentos é preciso para denunciar de forma on-line?</h2>
-      <p>As denuncias on-lines também podem ser anônimas e sem documentos obrigatórios. Se quiser anexar provas: RG, prints, fotos, vídeos, boletim de ocorrência ou laudos.</p>
+      <p>As denúncias on-line também podem ser anônimas e sem documentos obrigatórios. Se quiser anexar provas: RG, prints, fotos, vídeos, boletim de ocorrência ou laudos.</p>
     </div>
 
     <div class="faq">
@@ -153,7 +155,12 @@
     SOS
   </button>
 
-  <script src="main.js"></script>
+  <script>
+    // script simples para o menu mobile
+    document.getElementById('menu-toggle').addEventListener('click', () => {
+      document.getElementById('nav-menu').classList.toggle('active');
+    });
+  </script>
 
 </body>
 </html>
