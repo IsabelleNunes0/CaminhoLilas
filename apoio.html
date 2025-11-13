@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+se tiver algo errado nesse codigo corriga <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -6,103 +6,6 @@
   <title>Caminho Lilás | Apoio</title>
   <link rel="stylesheet" href="style.css">
   <style>
-    /* ======== ESTILO DA PÁGINA ======== */
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
-    }
-
-    .content {
-      flex: 1;
-    }
-
-    /* ======== CABEÇALHO PADRÃO ======== */
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background-color: #f9e5f5;
-      padding: 15px 30px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      position: relative;
-      z-index: 1000;
-    }
-
-    .logo {
-      color: #7a3d8a;
-      font-size: 1.8rem;
-      margin: 0;
-      font-family: 'Georgia', serif;
-    }
-
-    .nav {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-      margin: 0;
-      padding: 0;
-    }
-
-    .nav li a {
-      text-decoration: none;
-      color: #4a174d;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    .nav li a:hover,
-    .nav li a.active {
-      color: #d46aa0;
-    }
-
-    /* ======== MENU HAMBÚRGUER ======== */
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      justify-content: space-between;
-      width: 25px;
-      height: 18px;
-      cursor: pointer;
-    }
-
-    .menu-toggle div {
-      width: 100%;
-      height: 3px;
-      background-color: #4a174d;
-      border-radius: 2px;
-    }
-
-    @media (max-width: 768px) {
-      .menu-toggle {
-        display: flex;
-      }
-
-      nav {
-        display: none;
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background-color: #f9e5f5;
-        width: 100%;
-        text-align: center;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      }
-
-      nav.active {
-        display: block;
-      }
-
-      .nav {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px 0;
-      }
-    }
-
-    /* ======== CONTEÚDO ======== */
     .page-title-emergency {
       text-align: center;
       margin: 3rem auto 2rem;
@@ -120,6 +23,54 @@
       color: #555;
     }
 
+    .emergency-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin: 3rem auto;
+      max-width: 1000px;
+      padding: 0 1rem;
+    }
+
+    .contact-box {
+      flex: 1;
+      min-width: 280px;
+      max-width: 450px;
+      background-color: #fff;
+      border: 2px solid #180d18;
+      border-radius: 15px;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-box:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-box h3 {
+      color: #d46aa0;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      font-family: 'Georgia', serif;
+    }
+
+    .contact-box p {
+      font-size: 1.1em;
+      color: #666;
+      margin-bottom: 2rem;
+    }
+
+    .contact-box .btn {
+      width: 100%;
+      padding: 1rem 0;
+      font-size: 1.1em;
+      margin: 0;
+    }
+
     .support-locations-section {
       background-color: #f9e5f5;
       padding: 4rem 1rem;
@@ -132,6 +83,13 @@
       font-family: 'Georgia', serif;
       font-size: 2.5rem;
       margin-bottom: 2.5rem;
+    }
+
+    .support-locations-section > p {
+      max-width: 800px;
+      margin: 0 auto 3.5rem;
+      font-size: 1.1em;
+      color: #444;
     }
 
     .locations-grid {
@@ -183,24 +141,6 @@
       display: block;
       margin-top: 1.5rem;
       font-size: 0.95em;
-      color: #7a3d8a;
-      font-weight: bold;
-      text-decoration: none;
-    }
-
-    .location-item .btn-link:hover {
-      text-decoration: underline;
-    }
-
-    /* ======== RODAPÉ ======== */
-    .footer {
-      background-color: #f9e5f5;
-      text-align: center;
-      padding: 15px 10px;
-      font-size: 0.9em;
-      color: #4a174d;
-      margin-top: auto;
-      box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
     }
 
     @media (max-width: 768px) {
@@ -208,8 +148,16 @@
         font-size: 2.2rem;
       }
 
+      .contact-box {
+        padding: 1.5rem;
+      }
+
       .support-locations-section h2 {
         font-size: 2rem;
+      }
+
+      .locations-grid {
+        grid-template-columns: 1fr;
       }
 
       .location-item {
@@ -224,13 +172,13 @@
   <header class="header">
     <h1 class="logo">Caminho Lilás</h1>
 
-    <div class="menu-toggle" aria-label="Abrir menu" onclick="toggleMenu()">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+    <div class="menu-toggle" aria-label="Abrir menu">
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
 
-    <nav id="menu">
+    <nav>
       <ul class="nav">
         <li><a href="index.html">Início</a></li>
         <li><a href="violencia.html">Violência Doméstica</a></li>
@@ -258,9 +206,11 @@
             DEAM I: EQS 204/205 - Asa Sul, Brasília - DF<br>
             DEAM II: St. B Sul Qsd 11 - Taguatinga Sul, Brasília - DF
           </address>
-          <p>
+        <p>
             <a href="https://www.pcdf.df.gov.br/servicos/delegacia-eletronica/violencia-domestica-contra-mulher" target="_blank" class="btn-link">
-              Delegacia Eletrônica Maria da Penha On-line
+  Delegacia Eletrônica Maria da Penha On-line
+</a><br>
+
             </a>
           </p>
         </div>
@@ -268,8 +218,14 @@
         <div class="location-item">
           <h3>Casa da Mulher Brasileira</h3>
           <p>Espaço multidisciplinar que integra serviços como delegacia, defensoria pública, ministério público e apoio psicossocial.</p>
-          <address>Avenida Eixo Monumental Sul - s/nº - Asa Sul, Brasília - DF</address>
-          <p><a href="https://www.gov.br/mulheres/pt-br/acesso-a-informacao/acoes-e-programas/casa-da-mulher-brasileira" target="_blank" class="btn-link">Acesse o site</a></p>
+          <address>
+            Endereço: Avenida Eixo Monumental Sul - s/nº - Asa Sul, Brasília - DF
+          </address>
+          <p>
+            <a href="https://www.gov.br/mulheres/pt-br/acesso-a-informacao/acoes-e-programas/casa-da-mulher-brasileira" target="_blank" class="btn-link">
+              Acesse o site
+            </a>
+          </p>
         </div>
 
         <div class="location-item">
@@ -277,16 +233,17 @@
           <p>Oferecem serviços de proteção social básica, com foco em famílias e indivíduos em situação de vulnerabilidade.</p>
           <address>
             CRAS Asa Norte: SEPN 510, Conjunto E, Bloco E, Asa Norte, Brasília - DF<br>
-            (Procure o CRAS mais próximo no site da Secretaria de Desenvolvimento Social do DF)
+            (Procure o CRAS mais próximo de sua região no site da Secretaria de Desenvolvimento Social do DF)
           </address>
         </div>
 
         <div class="location-item">
           <h3>Rede de Proteção às Mulheres no DF</h3>
-          <p>Iniciativas governamentais do DF que oferecem suporte especializado, acolhimento e ferramentas de segurança.</p>
+          <p>Iniciativas governamentais do Distrito Federal (DF) que oferecem suporte especializado, acolhimento e ferramentas de segurança para mulheres e vítimas de violência.</p>
           <address>
-            <a href="https://www.sejus.df.gov.br/w/programa-direito-delas" target="_blank" class="btn-link">Direito Delas</a><br>
-            <a href="https://www.ssp.df.gov.br/viva-flor/" target="_blank" class="btn-link">Programa Viva Flor</a>
+            <a href="https://www.sejus.df.gov.br/w/programa-direito-delas" target="_blank" class="btn-link">Secretaria De Estado De Justiça E Cidadania (Direito Delas) </a><br>
+            <a href="https://www.ssp.df.gov.br/viva-flor/" target="_blank" class="btn-link"> Programa Viva Flor </a><br>
+              
           </address>
         </div>
       </div>
@@ -297,7 +254,7 @@
     <p>&copy; 2025 Caminho Lilás. Todos os direitos reservados.</p>
   </footer>
 
-  <!-- Botão SOS fixo (mantido como está) -->
+  <!-- Botão de Emergência fixo -->
   <button onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'"
     style="
       position: fixed;
@@ -319,11 +276,7 @@
     SOS
   </button>
 
-  <script>
-    function toggleMenu() {
-      const menu = document.getElementById('menu');
-      menu.classList.toggle('active');
-    }
-  </script>
+  <script src="main.js"></script>
 </body>
 </html>
+
