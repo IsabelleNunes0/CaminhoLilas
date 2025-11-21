@@ -80,6 +80,7 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* ====== Efeito de digitação ====== */
     .typing {
       display: inline-block;
       background: #f1dcf3;
@@ -107,6 +108,7 @@
       40% { opacity: 1; }
     }
 
+    /* ====== Rodapé Chat ====== */
     .chat-footer {
       background: #fafafa;
       border-top: 1px solid #ddd;
@@ -158,8 +160,9 @@
     }
   </style>
 </head>
-<body>
 
+<body>
+  <!-- Cabeçalho padrão -->
   <header class="header">
     <h1 class="logo">Caminho Lilás</h1>
 
@@ -180,6 +183,7 @@
     </nav>
   </header>
 
+  <!-- Chatbot -->
   <main class="chat-container">
     <div class="chat-box">
       <div class="chat-header">Atendimento de Acolhimento</div>
@@ -196,6 +200,7 @@
     </div>
   </main>
 
+  <!-- Botão SOS -->
   <button
     onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'"
     style="
@@ -218,6 +223,7 @@
     SOS
   </button>
 
+  <!-- Rodapé -->
   <footer>
     <p>&copy; 2025 Caminho Lilás. Todos os direitos reservados.</p>
   </footer>
@@ -225,12 +231,6 @@
   <script>
     const chatBody = document.getElementById("chat-body");
     const chatFooter = document.getElementById("chat-footer");
-
-    function forceScroll() {
-      setTimeout(() => {
-        chatBody.scrollTop = chatBody.scrollHeight;
-      }, 50);
-    }
 
     function scrollToBottom() {
       chatBody.scrollTop = chatBody.scrollHeight;
@@ -241,7 +241,7 @@
       msg.classList.add("message", sender);
       msg.innerHTML = content;
       chatBody.appendChild(msg);
-      forceScroll();
+      scrollToBottom();
     }
 
     function showTyping(callback, delay = 1500) {
@@ -249,12 +249,12 @@
       typing.classList.add("typing");
       typing.innerHTML = '<span class="dot"></span><span class="dot"></span><span class="dot"></span>';
       chatBody.appendChild(typing);
-      forceScroll();
+      scrollToBottom();
 
       setTimeout(() => {
         typing.remove();
         callback();
-        forceScroll();
+        scrollToBottom();
       }, delay);
     }
 
@@ -264,7 +264,6 @@
         <textarea id="userText" placeholder="Escreva aqui sua história..."></textarea><br>
         <button onclick="sendStory()">Enviar</button>
       `;
-      forceScroll();
     }
 
     function sendStory() {
@@ -278,7 +277,6 @@
           <button onclick="dangerChoice('Sim')">Sim</button>
           <button onclick="dangerChoice('Não')">Não</button>
         `;
-        forceScroll();
       });
     }
 
@@ -314,7 +312,6 @@
           <button onclick="openTopic('direitos')">Conhecer meus direitos</button>
           <button onclick="endChat()">Encerrar atendimento</button>
         `;
-        forceScroll();
       });
     }
 
@@ -360,7 +357,6 @@
       }
 
       setTimeout(() => nextOptions(), 3000);
-      forceScroll();
     }
 
     function endChat() {
@@ -372,15 +368,7 @@
         );
         setTimeout(() => location.reload(), 4000);
       });
-      forceScroll();
     }
-      // Auto-scroll suave sempre que mensagens forem adicionadas
-    const observer = new MutationObserver(() => {
-      chatBody.scrollTo({ top: chatBody.scrollHeight, behavior: 'smooth' });
-    });
-
-    observer.observe(chatBody, { childList: true });
   </script>
-
 </body>
-</html>
+</html>  
