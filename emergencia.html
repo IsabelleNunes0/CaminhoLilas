@@ -80,18 +80,18 @@
     /* MOBILE */
    @media (max-width: 768px) {
 
-  /* HEADER EM COLUNA, ALINHADO À DIREITA */
+  /* HEADER EM COLUNA, ALINHADO À ESQUERDA */
   .header {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;  
     padding: 1.2rem 1.5rem;
     gap: 10px;
   }
 
-  /* LOGO ALINHADO À DIREITA */
+  /* LOGO ALINHADO À ESQUERDA */
   .logo {
-    text-align: right;
+    text-align: left;  
     width: 100%;
     margin: 0;
     font-size: 1.8rem;
@@ -100,7 +100,7 @@
   /* MENU HAMBÚRGUER ABAIXO DO NOME */
   .menu-toggle {
     display: flex;
-    align-self: flex-end;
+    align-self: flex-start; /
   }
 
   /* MENU DROPDOWN */
@@ -108,8 +108,8 @@
     display: none;
     flex-direction: column;
     position: absolute;
-    top: 140px; /* aumenta pois o header ficou maior */
-    right: 20px;
+    top: 140px; 
+    left: 20px;        
     width: 200px;
     background: #a75ca8;
     padding: 1rem;
@@ -122,6 +122,7 @@
     display: flex;
   }
 }
+
 
 
     /* BOTÕES */
