@@ -15,6 +15,7 @@
       line-height: 1.6;
     }
 
+    /* CABEÇALHO */
     .header {
       background: linear-gradient(90deg, #a75ca8, #b66cb8);
       padding: 1rem 2rem;
@@ -34,7 +35,8 @@
       color: white;
     }
 
-    .nav {
+    /* MENU DESKTOP */
+    nav ul {
       list-style: none;
       display: flex;
       gap: 1.5rem;
@@ -42,20 +44,24 @@
       padding: 0;
     }
 
-    .nav a {
+    nav ul li a {
       color: white;
       text-decoration: none;
       font-weight: 300;
-      transition: opacity 0.3s;
+      transition: opacity .3s;
     }
 
-    .nav a:hover { opacity: 0.8; }
+    nav ul li a:hover {
+      opacity: .8;
+    }
 
-    .nav a.active {
+    /* LINHA ORIGINAL */
+    nav ul li a.active {
       border-bottom: 2px solid #a75ca8;
       font-weight: 700;
     }
 
+    /* MENU HAMBÚRGUER */
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -66,47 +72,55 @@
     .menu-toggle div {
       width: 25px;
       height: 3px;
-      background-color: white;
+      background: white;
       border-radius: 2px;
-      transition: 0.3s;
+      transition: .3s;
     }
 
+    /* MOBILE */
     @media (max-width: 768px) {
-      .nav {
+
+      nav ul {
         display: none;
-        position: absolute;
-        top: 65px;
-        right: 20px;
-        background-color: #a75ca8;
         flex-direction: column;
+        position: absolute;
+        top: 70px;
+        right: 20px;
         width: 200px;
-        border-radius: 10px;
+        background: #a75ca8;
         padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        z-index: 99;
       }
 
-      .nav.active { display: flex; }
-      .menu-toggle { display: flex; }
+      nav ul.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
     }
 
+    /* BOTÕES */
     .btn {
       display: inline-block;
       padding: 1rem 1.2rem;
       border-radius: 10px;
       font-weight: bold;
       text-decoration: none;
-      transition: background 0.3s, box-shadow 0.3s;
+      transition: .3s;
       font-size: 1.2em;
     }
 
-    .btn-primary { background-color: #d46aa0; color: white; }
-    .btn-primary:hover { background-color: #c0508b; box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
+    .btn-primary { background: #d46aa0; color: #fff; }
+    .btn-secondary { background: #7a3d8a; color: #fff; }
 
-    .btn-secondary { background-color: #7a3d8a; color: white; }
-    .btn-secondary:hover { background-color: #5e2d68; box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
+    /* COR ORIGINAL DO BOTÃO 100 */
+    .btn-tertiary { background: #a75ca8; color: white; }
 
-    .btn-tertiary { background-color: #a75ca8; color: white; }
-    .btn-tertiary:hover { background-color: #8c4c8d; box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
-
+    /* TÍTULOS */
     .page-title-emergency {
       text-align: center;
       margin: 3rem auto 2rem;
@@ -124,6 +138,7 @@
       color: #555;
     }
 
+    /* CARDS */
     .emergency-contacts {
       display: flex;
       flex-wrap: wrap;
@@ -138,13 +153,13 @@
       flex: 1;
       min-width: 250px;
       max-width: 320px;
-      background-color: #fff;
+      background: white;
       border: 2px solid #a75ca8;
       border-radius: 15px;
       padding: 2rem;
       text-align: center;
-      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+      transition: .3s;
     }
 
     .contact-box:hover {
@@ -156,7 +171,7 @@
       color: #ba87a1;
       font-size: 1.6rem;
       margin-bottom: 1rem;
-      font-family: 'Georgia', serif;
+      font-family: Georgia, serif;
     }
 
     .contact-box p {
@@ -165,19 +180,12 @@
       margin-bottom: 1.5rem;
     }
 
-    .contact-box .btn {
-      width: 100%;
-      padding: 1rem 0;
-      font-size: 1.3em;
-    }
-
     .footer {
       text-align: center;
       padding: 1rem;
-      background: linear-gradient(90deg, #b66cb8, #a75ca8);
       color: white;
+      background: linear-gradient(90deg, #b66cb8, #a75ca8);
       margin-top: 2rem;
-      font-size: 0.9rem;
     }
   </style>
 </head>
@@ -187,7 +195,7 @@
   <header class="header">
     <h1 class="logo">Caminho Lilás</h1>
 
-    <div class="menu-toggle" aria-label="Abrir menu">
+    <div class="menu-toggle" aria-label="Abrir menu" onclick="toggleMenu()">
       <div></div>
       <div></div>
       <div></div>
@@ -237,6 +245,7 @@
     <p>&copy; 2025 Caminho Lilás. Todos os direitos reservados.</p>
   </footer>
 
+  <!-- BOTÃO SOS -->
   <button onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'" 
     style="
       position: fixed;
@@ -253,13 +262,15 @@
       z-index: 999;
       font-size: 14px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      transition: 0.2s;
     ">
     SOS
   </button>
 
-  <script src="main.js"></script>
+  <script>
+    function toggleMenu() {
+      document.querySelector(".nav").classList.toggle("active");
+    }
+  </script>
+
 </body>
 </html>
-
-
