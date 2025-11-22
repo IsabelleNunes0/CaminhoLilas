@@ -118,7 +118,6 @@
     .btn-tertiary { background-color: #a75ca8; color: white; }
     .btn-tertiary:hover { background-color: #8c4c8d; box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
 
-    /* ===== Títulos ===== */
     .page-title-emergency {
       text-align: center;
       margin: 3rem auto 2rem;
@@ -136,7 +135,6 @@
       color: #555;
     }
 
-    /* ===== Contatos ===== */
     .emergency-contacts {
       display: flex;
       flex-wrap: wrap;
@@ -184,7 +182,6 @@
       font-size: 1.3em;
     }
 
-    /* ===== Rodapé ===== */
     .footer {
       text-align: center;
       padding: 1rem;
@@ -193,6 +190,7 @@
       margin-top: 2rem;
       font-size: 0.9rem;
     }
+
   </style>
 </head>
 
@@ -201,17 +199,17 @@
   <!-- Cabeçalho 100% CORRIGIDO -->
   <header class="header">
 
-    <!-- 1️⃣ Logo -->
+    <!-- 1️⃣ LOGO -->
     <h1 class="logo">Caminho Lilás</h1>
 
-    <!-- 2️⃣ Hambúrguer -->
+    <!-- 2️⃣ MENU HAMBÚRGUER -->
     <div class="menu-toggle" aria-label="Abrir menu">
       <div></div>
       <div></div>
       <div></div>
     </div>
 
-    <!-- 3️⃣ NAV -->
+    <!-- 3️⃣ NAV (AGORA NA POSIÇÃO CORRETA) -->
     <nav>
       <ul class="nav">
         <li><a href="index.html">Início</a></li>
@@ -225,6 +223,7 @@
     </nav>
 
   </header>
+
 
   <main class="content">
     <h1 class="page-title-emergency">Precisa de Ajuda Agora?</h1>
@@ -257,6 +256,7 @@
     <p>&copy; 2025 Caminho Lilás. Todos os direitos reservados.</p>
   </footer>
 
+  <!-- Botão SOS -->
   <button onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'" 
     style="
       position: fixed;
@@ -271,11 +271,19 @@
       border-radius: 50%;
       cursor: pointer;
       z-index: 999;
-      font-size: 14px;">
+      font-size: 14px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
+    ">
     SOS
   </button>
 
-  <script src="main.js"></script>
+  <script>
+    // 🔥 GARANTE QUE O MENU MOBILE ABRE
+    document.querySelector(".menu-toggle").addEventListener("click", function() {
+      document.querySelector(".nav").classList.toggle("active");
+    });
+  </script>
+
 </body>
 </html>
-
