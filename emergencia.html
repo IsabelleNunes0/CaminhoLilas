@@ -1,12 +1,13 @@
-<!-- Código emergencial limpo e reorganizado conforme solicitado -->
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Caminho Lilás | Contatos de Emergência</title>
+  <title>Caminho Lilás | Ajuda Imediata</title>
   <link rel="stylesheet" href="style.css">
+
   <style>
+    /* ===== Fonte e base ===== */ 
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
@@ -20,11 +21,11 @@
       background: linear-gradient(90deg, #a75ca8, #b66cb8);
       padding: 1rem 2rem;
       width: 100%;
+      box-sizing: border-box;
       color: white;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      box-sizing: border-box;
       position: relative;
     }
 
@@ -32,6 +33,7 @@
       font-family: 'Georgia', serif;
       font-size: 1.6rem;
       font-weight: bold;
+      color: white;
     }
 
     .nav {
@@ -46,17 +48,19 @@
       color: white;
       text-decoration: none;
       font-weight: 300;
-      transition: opacity .3s;
+      transition: opacity 0.3s;
     }
 
-    .nav a:hover { opacity: .8; }
+    .nav a:hover {
+      opacity: 0.8;
+    }
 
     .nav a.active {
+      border-bottom: 2px solid #a75ca8;
       font-weight: 700;
-      border-bottom: 2px solid #fff;
     }
 
-    /* ===== Hambúrguer ===== */
+    /* ===== Menu Responsivo (IGUAL AO DA VIOLÊNCIA) ===== */
     .menu-toggle {
       display: none;
       flex-direction: column;
@@ -76,7 +80,7 @@
       .nav {
         display: none;
         position: absolute;
-        top: 70px;
+        top: 65px;
         right: 20px;
         background-color: #a75ca8;
         flex-direction: column;
@@ -85,18 +89,43 @@
         padding: 1rem;
       }
 
-      .nav.active { display: flex; }
+      .nav.active {
+        display: flex;
+      }
 
-      .menu-toggle { display: flex; }
+      .menu-toggle {
+        display: flex;
+      }
     }
+
+    /* ===== Botões ===== */
+    .btn {
+      display: inline-block;
+      padding: 1rem 1.2rem;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s, box-shadow 0.3s;
+      font-size: 1.2em;
+    }
+
+    .btn-primary { background-color: #d46aa0; color: white; }
+    .btn-primary:hover { background-color: #c0508b; box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
+
+    .btn-secondary { background-color: #7a3d8a; color: white; }
+    .btn-secondary:hover { background-color: #5e2d68; box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
+
+    .btn-tertiary { background-color: #a75ca8; color: white; }
+    .btn-tertiary:hover { background-color: #8c4c8d; box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
 
     /* ===== Títulos ===== */
     .page-title-emergency {
       text-align: center;
-      margin: 3rem auto 1rem;
+      margin: 3rem auto 2rem;
       color: #7a3d8a;
       font-family: 'Georgia', serif;
       font-size: 2.8rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     }
 
     .page-subtitle-emergency {
@@ -107,14 +136,14 @@
       color: #555;
     }
 
-    /* ===== Cards ===== */
+    /* ===== Contatos de Emergência ===== */
     .emergency-contacts {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 1.5rem;
+      margin: 3rem auto;
       max-width: 1100px;
-      margin: 2rem auto;
       padding: 0 1rem;
     }
 
@@ -122,56 +151,64 @@
       flex: 1;
       min-width: 250px;
       max-width: 320px;
-      background: #fff;
+      background-color: #fff;
+      border: 2px solid #a75ca8;
       border-radius: 15px;
-      border: 1px solid #f0dff3;
       padding: 2rem;
       text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.2);
     }
 
     .contact-box h3 {
+      color: #ba87a1;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
       font-family: 'Georgia', serif;
-      color: #7a3d8a;
-      font-size: 1.5rem;
-      margin-bottom: .5rem;
     }
 
     .contact-box p {
+      font-size: 1.05em;
       color: #666;
       margin-bottom: 1.5rem;
     }
 
-    .btn {
-      display: block;
-      padding: 1rem;
-      border-radius: 10px;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 1.2em;
-      color: white;
+    .contact-box .btn {
+      width: 100%;
+      padding: 1rem 0;
+      font-size: 1.3em;
     }
 
-    .btn-primary { background: #d46aa0; }
-    .btn-secondary { background: #7a3d8a; }
-    .btn-tertiary { background: #a75ca8; }
-
+    /* ===== Rodapé ===== */
     .footer {
       text-align: center;
       padding: 1rem;
-      background: linear-gradient(90deg,#b66cb8,#a75ca8);
+      background: linear-gradient(90deg, #b66cb8, #a75ca8);
       color: white;
       margin-top: 2rem;
-      font-size: .9rem;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .page-title-emergency {
+        font-size: 2.2rem;
+      }
     }
   </style>
 </head>
 
 <body>
+
+  <!-- Cabeçalho (IGUAL AO VIOLÊNCIA) -->
   <header class="header">
     <h1 class="logo">Caminho Lilás</h1>
 
-    <div class="menu-toggle" onclick="document.querySelector('.nav').classList.toggle('active')">
+    <div class="menu-toggle" aria-label="Abrir menu">
       <div></div>
       <div></div>
       <div></div>
@@ -190,31 +227,60 @@
     </nav>
   </header>
 
-  <main>
+  <main class="content">
     <h1 class="page-title-emergency">Precisa de Ajuda Agora?</h1>
-    <p class="page-subtitle-emergency">Entre em contato imediatamente com os serviços oficiais de emergência.</p>
+    <p class="page-subtitle-emergency">
+      Sua segurança é nossa prioridade. Entre em contato com os serviços de emergência e apoio imediatamente.
+    </p>
 
     <section class="emergency-contacts">
       <div class="contact-box">
         <h3>Emergência Imediata</h3>
-        <p>Perigo ou agressão em andamento.</p>
-        <a href="tel:190" class="btn btn-primary">LIGUE 190</a>
+        <p>Em caso de perigo ou agressão em andamento, ligue para a polícia.</p>
+        <a href="tel:190" class="btn btn-primary">LIGUE 190 (Polícia Militar)</a>
       </div>
 
       <div class="contact-box">
         <h3>Denúncias e Orientações</h3>
-        <p>Atendimento à Mulher.</p>
-        <a href="tel:180" class="btn btn-secondary">LIGUE 180</a>
+        <p>Para registrar uma denúncia anônima ou obter informações.</p>
+        <a href="tel:180" class="btn btn-secondary">LIGUE 180 (Central de Atendimento à Mulher)</a>
       </div>
 
       <div class="contact-box">
-        <h3>Direitos Humanos</h3>
-        <p>Violações e denúncias gerais.</p>
-        <a href="tel:100" class="btn btn-tertiary">LIGUE 100</a>
+        <h3>Direitos Humanos e Violência</h3>
+        <p>Para denunciar violações de direitos humanos contra mulheres.</p>
+        <a href="tel:100" class="btn btn-tertiary">LIGUE 100 (Disque Direitos Humanos)</a>
       </div>
     </section>
   </main>
 
-  <footer class="footer">© 2025 Caminho Lilás</footer>
+  <footer class="footer">
+    <p>&copy; 2025 Caminho Lilás. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Botão SOS -->
+  <button onclick="window.location.href='https://www.tudogostoso.com.br/receita/23-bolo-simples.html'" 
+    style="
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      background: red;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 999;
+      font-size: 14px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
+    ">
+    SOS
+  </button>
+
+  <script src="main.js"></script>
+
 </body>
 </html>
