@@ -5,6 +5,211 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Caminho Lilás | Ajuda Imediata</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ===== Fonte e base ===== */ 
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background-color: #fdf6fa;
+      color: #444;
+      line-height: 1.6;
+    }
+
+    /* ===== Cabeçalho ===== */
+    .header {
+      background: linear-gradient(90deg, #a75ca8, #b66cb8);
+      padding: 1rem 2rem; /* mesmo tamanho da barra de 'estratégias' */
+      width: 100%;
+      box-sizing: border-box;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+    }
+
+    .logo {
+      font-family: 'Georgia', serif;
+      font-size: 1.6rem;
+      font-weight: bold;
+      color: white;
+    }
+
+    .nav {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+      margin: 0;
+      padding: 0;
+    }
+
+    .nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 300;
+      transition: opacity 0.3s;
+    }
+
+    .nav a:hover {
+      opacity: 0.8;
+    }
+
+    .nav a.active {
+      border-bottom: 2px solid #a75ca8;
+      font-weight: 700; /* negrito no item ativo */
+    }
+
+    /* ===== Menu Responsivo ===== */
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      border-radius: 2px;
+      transition: 0.3s;
+    }
+
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+        position: absolute;
+        top: 65px; /* ajustado para o novo tamanho da barra */
+        right: 20px;
+        background-color: #a75ca8;
+        flex-direction: column;
+        width: 200px;
+        border-radius: 10px;
+        padding: 1rem;
+      }
+
+      .nav.active {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: flex;
+      }
+    }
+
+    /* ===== Botões ===== */
+    .btn {
+      display: inline-block;
+      padding: 1rem 1.2rem;
+      border-radius: 10px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s, box-shadow 0.3s;
+      font-size: 1.2em;
+    }
+
+    .btn-primary { background-color: #d46aa0; color: white; }
+    .btn-primary:hover { background-color: #c0508b; box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
+
+    .btn-secondary { background-color: #7a3d8a; color: white; }
+    .btn-secondary:hover { background-color: #5e2d68; box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
+
+    .btn-tertiary { background-color: #a75ca8; color: white; }
+    .btn-tertiary:hover { background-color: #8c4c8d; box-shadow: 0 6px 16px rgba(0,0,0,0.18); }
+
+    /* ===== Título e subtítulo ===== */
+    .page-title-emergency {
+      text-align: center;
+      margin: 3rem auto 2rem;
+      color: #7a3d8a;
+      font-family: 'Georgia', serif;
+      font-size: 2.8rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .page-subtitle-emergency {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      font-size: 1.1em;
+      color: #555;
+    }
+
+    /* ===== Contatos de Emergência ===== */
+    .emergency-contacts {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.5rem;
+      margin: 3rem auto;
+      max-width: 1100px;
+      padding: 0 1rem;
+    }
+
+    .contact-box {
+      flex: 1;
+      min-width: 250px;
+      max-width: 320px;
+      background-color: #fff;
+      border: 2px solid #a75ca8;
+      border-radius: 15px;
+      padding: 2rem;
+      text-align: center;
+      box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .contact-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-box h3 {
+      color: #ba87a1;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      font-family: 'Georgia', serif;
+    }
+
+    .contact-box p {
+      font-size: 1.05em;
+      color: #666;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-box .btn {
+      width: 100%;
+      padding: 1rem 0;
+      font-size: 1.3em;
+    }
+
+    /* ===== Rodapé ===== */
+    .footer {
+      text-align: center;
+      padding: 1rem;
+      background: linear-gradient(90deg, #b66cb8, #a75ca8);
+      color: white;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+
+    /* ===== Responsividade adicional ===== */
+    @media (max-width: 768px) {
+      .emergency-contacts {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .contact-box {
+        width: 100%;
+        max-width: 340px;
+      }
+
+      .page-title-emergency {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -14,10 +219,10 @@
     <h1 class="logo">Caminho Lilás</h1>
 
     <div class="menu-toggle" aria-label="Abrir menu">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
+  <div></div>
+  <div></div>
+  <div></div>
+</div>
 
     <nav>
       <ul class="nav">
@@ -34,12 +239,9 @@
 
   <main class="content">
     <h1 class="page-title-emergency">Precisa de Ajuda Agora?</h1>
-    <p class="page-subtitle-emergency">
-      Sua segurança é nossa prioridade. Entre em contato com os serviços de emergência e apoio imediatamente.
-    </p>
+    <p class="page-subtitle-emergency">Sua segurança é nossa prioridade. Entre em contato com os serviços de emergência e apoio imediatamente.</p>
 
     <section class="emergency-contacts">
-
       <div class="contact-box">
         <h3>Emergência Imediata</h3>
         <p>Em caso de perigo ou agressão em andamento, ligue para a polícia.</p>
@@ -57,7 +259,6 @@
         <p>Para denunciar violações de direitos humanos contra mulheres.</p>
         <a href="tel:100" class="btn btn-tertiary">LIGUE 100 (Disque Direitos Humanos)</a>
       </div>
-
     </section>
   </main>
 
