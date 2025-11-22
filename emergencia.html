@@ -78,30 +78,51 @@
     }
 
     /* MOBILE */
-    @media (max-width: 768px) {
+   @media (max-width: 768px) {
 
-      nav ul {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        right: 20px;
-        width: 200px;
-        background: #a75ca8;
-        padding: 1rem;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        z-index: 99;
-      }
+  /* HEADER EM COLUNA, ALINHADO À DIREITA */
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 1.2rem 1.5rem;
+    gap: 10px;
+  }
 
-      nav ul.active {
-        display: flex;
-      }
+  /* LOGO ALINHADO À DIREITA */
+  .logo {
+    text-align: right;
+    width: 100%;
+    margin: 0;
+    font-size: 1.8rem;
+  }
 
-      .menu-toggle {
-        display: flex;
-      }
-    }
+  /* MENU HAMBÚRGUER ABAIXO DO NOME */
+  .menu-toggle {
+    display: flex;
+    align-self: flex-end;
+  }
+
+  /* MENU DROPDOWN */
+  nav ul {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 140px; /* aumenta pois o header ficou maior */
+    right: 20px;
+    width: 200px;
+    background: #a75ca8;
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 99;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+}
+
 
     /* BOTÕES */
     .btn {
