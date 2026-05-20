@@ -32,8 +32,6 @@ Tecnologias
 
 •@IsabelleNunes0
 
-•@felipeyaneb-design
-
 •@BarbaraOliveiraSsantos
 
 •@MariaEduardasr
